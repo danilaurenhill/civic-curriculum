@@ -4,4 +4,13 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+header .title {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  text-align: center; }
+  header .title:last-child {
+    margin-right: 0; }
+
 /*# sourceMappingURL=style.css.map */
