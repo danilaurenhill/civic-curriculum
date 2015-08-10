@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAGE,IAAK;EACH,UAAU,EAAE,UAAU;;AAItB,sBAEU;EACR,UAAU,EAAE,OAAO;;ACPxB,aAAO;EC+DJ,KAAK,EAAE,IAAsB;EAG3B,OAAO,EAAE,KAAK;EAed,YAAoB,EAAE,QAA+B;EACrD,KAAK,EAAE,IAAuC;EDhFlD,UAAU,EAAE,MAAM;ECkFd,wBAAa;IACX,YAAoB,EAAE,CAAC",
-"sources": ["neat/grid/_box-sizing.scss","main.scss","neat/grid/_span-columns.scss"],
-"names": [],
-"file": "style.css"
-}
