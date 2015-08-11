@@ -1,0 +1,37 @@
+$green: #16DDA4;
+$font: Roboto, sans-serif;
+
+header {
+  h1 { 
+    color: $green;
+    text-align:center;
+  }
+}
+section {
+  @include outer-container;
+}
+
+.description {
+  .intro {
+    @include span-columns(6);
+  }
+}
+.questions {
+  .input {
+    @include span-columns(6);
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    padding-left: 50px;
+  }
+}
+
+.hero {
+  @include span-columns(12);
+  background-image: url('./app/assets/images/tech_jobs_academy_demo.jpg');
+
+  background-repeat: no-repeat;
+  background-size: 750px;
+  background-position: -60px 0px;
+  padding-top: 15%;
+}

@@ -1,0 +1,32 @@
+$green: #16DDA4;
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color:black;
+  color: white;
+  clear: both;
+  height: 45px;
+  @include span-columns(12);
+  text-align:center;
+  padding: 1px;  
+  max-width: none;
+  nav, ul { 
+    list-style-type: none;
+    float: none;
+    width: auto;
+  }
+  li { 
+    text-transform: uppercase; 
+    padding-left: 30px;
+    &:first-child {margin-left: 620px;}
+    a { 
+      color: $green;
+      text-decoration: none;
+    }
+  }
+  ul {
+    display: inline-flex;    
+  }
+}

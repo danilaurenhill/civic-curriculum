@@ -1,0 +1,12 @@
+header {
+  h1 { text-align:center;}
+}
+section {
+  .questions {
+    @include span-columns(6);
+    text-align:center;  
+  }
+  .description {
+    @include span-columns(6); 
+  }
+}

@@ -1,3 +1,34 @@
+$green: #16DDA4;
+$font: Roboto, sans-serif;
+
 h1 {
   color: green;
+}
+body {
+  /*background-image: url("../assets/images/tech_jobs_academy_demo.jpg");*/
+  color: black;
+  font-family: $font;
+  font-weight: 400;
+}
+
+p {
+  font-family: $font;
+  font-weight: 400;
+}
+
+section {
+  margin: 10px;
+}
+
+.submit {
+  margin-top: 20px;
+  display:inline-block;
+  background-color: $green;
+  cursor:pointer;
+  color:white;
+  font-family: 100% $font;
+  font-size: modular-scale(0);
+  padding: 8px 65px;
+  text-decoration:none;
+  border: none;
 }
