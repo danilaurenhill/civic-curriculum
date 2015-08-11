@@ -1,5 +1,12 @@
-
+// Place all the styles related to the Main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+header {
 	.title {
-		@include span-column(12);
-		h1 { text-align: center; }
+  		@include span-columns(12);
+		h1 { 
+			text-align: center;
+			color: green;
+		}
 	}
+}
