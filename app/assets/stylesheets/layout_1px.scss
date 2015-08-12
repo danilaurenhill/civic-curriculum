@@ -25,7 +25,12 @@ section {
     padding-left: 50px;
   }
 }
-
+.cases {
+  @include outer-container;
+  .case-study {
+    @include span-columns(12);
+  }
+}
 .hero {
   @include span-columns(12);
   background-image: url('./app/assets/images/tech_jobs_academy_demo.jpg');

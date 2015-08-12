@@ -1,9 +1,21 @@
-<% @cases.each do |case_study| %>
-	<%= case_study.title %>
-	<br>
-	<%= case_study.description %>
-	<br>
-	<%= case_study.link %>
-	<br>
-	<br>
-<% end %>
+<header>
+	<h1> Civic Tech Curriculum </h1>
+</header>
+<div class="page-title">
+	<h3> All Case Studies </h3>
+</div>
+<div class="cases">
+	<div class="case-study">
+		<% @cases.each do |case_study| %>
+			<%= case_study.id %>
+			<br>
+			<%= case_study.title %>
+			<br>
+			<%= case_study.description %>
+			<br>
+			<a href=<%= case_study.link %> target="_blank">Link to Case</a> 
+			<br>
+			<br>
+		<% end %>
+	</div>
+</div>

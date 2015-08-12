@@ -4,6 +4,11 @@ $font: Roboto, sans-serif;
 h1 {
   color: green;
 }
+h3 {
+  font-family: $font;
+  @include span-columns(12);
+  text-align: center;
+}
 body {
   /*background-image: url("../assets/images/tech_jobs_academy_demo.jpg");*/
   color: black;
