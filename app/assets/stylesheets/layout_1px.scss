@@ -29,6 +29,9 @@ section {
   @include outer-container;
   .case-study {
     @include span-columns(12);
+  .link {
+    float: right;
+  }
   }
 }
 .hero {

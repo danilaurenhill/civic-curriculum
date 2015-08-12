@@ -7,13 +7,16 @@
 <div class="cases">
 	<div class="case-study">
 		<% @cases.each do |case_study| %>
-			<%= case_study.id %>
-			<br>
-			<%= case_study.title %>
-			<br>
-			<%= case_study.description %>
-			<br>
-			<a href=<%= case_study.link %> target="_blank">Link to Case</a> 
+			<div class="case-number">
+				<h4>Case Study #<%= case_study.id %><h4>
+			</div>
+
+			<h4>Title: <%= case_study.title %><h4>
+			<h4>Description: <h4><%= case_study.description %>
+			<div class="link">
+				<a href=<%= case_study.link %> target="_blank">Link to Case</a> 
+			</div>
+
 			<br>
 			<br>
 		<% end %>

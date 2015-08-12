@@ -20,9 +20,13 @@ p {
   font-family: $font;
   font-weight: 400;
 }
-
 section {
   margin: 10px;
+}
+.case-number {
+  text-align: center;
+  background-color: blue;
+  padding: 3px 3px;
 }
 
 .submit {
