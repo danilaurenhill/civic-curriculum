@@ -18616,3 +18616,36 @@ Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-12 16:28:10 -0400
+
+
+Started GET "/all" for ::1 at 2015-08-12 16:58:41 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#all as HTML
+  [1m[35mCase Load (3.2ms)[0m  SELECT "cases".* FROM "cases"
+  Rendered main/all.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 2299ms (Views: 2277.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/all" for ::1 at 2015-08-12 16:58:44 -0400
+Processing by MainController#all as HTML
+  [1m[36mCase Load (0.2ms)[0m  [1mSELECT "cases".* FROM "cases"[0m
+  Rendered main/all.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-2e0751d8cda69fecfb6fd113e48f9b5b058ec83db129145bdf87491fdcce5e0e.css?body=1" for ::1 at 2015-08-12 16:58:44 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-12 16:58:44 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-12 16:58:44 -0400
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-12 16:58:44 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-12 16:58:44 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-12 16:58:44 -0400
