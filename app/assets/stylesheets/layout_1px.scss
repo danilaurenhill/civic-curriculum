@@ -25,13 +25,17 @@ section {
     padding-left: 50px;
   }
 }
+
 .cases {
   @include outer-container;
   .case-study {
+    .case-number {
+      h4 { color:white; } 
+    } 
     @include span-columns(12);
-  .link {
-    float: right;
-  }
+    .link {
+      float: right;
+    }
   }
 }
 .hero {
