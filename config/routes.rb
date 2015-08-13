@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'main#index'
   get '/all' => 'main#all'
+  post 'main/find' => 'main#find'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

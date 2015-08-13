@@ -18,18 +18,24 @@
     </section>
     <section class="questions">
       <div class="input">
-        <form>
+        
+        <%= form_tag main_find_path, method: :post do %>
           <p>What subject do you teach?<p>
           <input type="text" name="teach">
           <p>What grade level do you teach?<p>
           <input type="text" name="grade">
-          <p>Question 3?<p>
-          <input type="text" name="teach">
+          <p>Tag?<p>
+          <select name="tag_id" id="tag_id">
+          <% @tags.each do |tag| %>
+            <option value=<%= "#{tag.id}"%>><%= tag.name %></option>
+          <% end %>
+          </select>
           <p>Question 4?<p>
-          <input type="text" name="teach">
+          <input type="text" name="teach2">
           <br>
-          <input class="submit" type="submit" value="Submit">
-        </form>
+          <%= submit_tag 'Submit' %>
+        <% end %>
+        
       </div>
     </section>
       <section class="footer" id="footer">

@@ -17,4 +17,11 @@ namespace :seed do
 			i += 1
 		end
 	end
+	desc "populate tags"
+	task :pop_tags => :environment do
+		tagz = ["Social Studies", "Math", "Computers", "Science", "Thug Life"]
+		tagz.each do |tag|
+			Tag.create(name: tag)
+		end
+	end
 end

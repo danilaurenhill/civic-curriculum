@@ -7,6 +7,7 @@ gem "sass"
 gem 'bourbon'
 gem 'neat'
 gem 'rake'
+gem 'pry'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
