@@ -10,6 +10,6 @@ class MainController < ApplicationController
 		@selected_tag = Tag.find_by(id: params["tag_id"])
 		@subject = params["teach"]
 		@grade = params["grade"]
-		binding.pry
+		# binding.pry
 	end
 end
