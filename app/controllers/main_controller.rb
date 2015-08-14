@@ -1,4 +1,4 @@
-require 'pry'
+ 
 class MainController < ApplicationController
 	def index
 		@tags = Tag.all
