@@ -35,9 +35,27 @@
         
         <%= form_tag main_find_path, method: :post do %>
           <p>What subject do you teach?<p>
-          <input type="text" name="teach">
+          <select name="subject_id" id="subject_id">
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+            <option value="history">History</option>
+            <option value="english">English</option>
+            <option value="statistics">Statistics</option>
+            <option value="philosophy">Philosophy</option>
+            <option value="forieign_language">Foreign Language</option>
+          </select>
+          <br>
           <p>What grade level do you teach?<p>
-          <input type="text" name="grade">
+          <select name="grade_id" id="grade_id">
+            <option value="freshman_highschool">Freshman High School</option>
+            <option value="sophomore_highschool">Sophmore High School</option>
+            <option value="junior_highschool">Junior High School</option>
+            <option value="senior_highschool">Senior High School</option>
+            <option value="freshman_college">College Freshman</option>
+            <option value="freshman_college">College Sophomore</option>
+            <option value="freshman_college">College Junior</option>
+            <option value="freshman_college">College Senior</option>
+          </select>
           <p>Tag?<p>
           <select name="tag_id" id="tag_id">
           <% @tags.each do |tag| %>
