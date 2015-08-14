@@ -33,8 +33,18 @@ section {
       h4 { color:white; } 
     } 
     @include span-columns(12);
+    .description {
+      padding-top: 20px;
+    }
     .link {
-      float: right;
+      padding-top: 10px;
+      a { 
+        font-weight: bold;
+        color: #4668C5;
+       }
+      a:hover {
+        color: #002050;
+      }
     }
   }
 }
