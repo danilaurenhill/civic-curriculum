@@ -1,19 +1,17 @@
-<header>
-	<h1> Civic Tech Curriculum </h1>
-</header>
 <div class="page-title">
-	<h3> All Case Studies </h3>
+	<h3> ALL CASE STUDIES </h3>
 </div>
 <div class="cases">
 	<div class="case-study">
 		<% @cases.each do |case_study| %>
 			<div class="case-number">
-				<h4>Case Study #<%= case_study.id %><h4>
+				<h4><%= case_study.id %>. <%= case_study.title %><h4>
 			</div>
-			<h4>Title: <%= case_study.title %><h4>
-			<h4>Description: <h4><%= case_study.description %>
+			<div class="description">
+				<%= case_study.description %>
+			</div>
 			<div class="link">
-				<a href=<%= case_study.link %> target="_blank">Link to Case</a> 
+				<a href=<%= case_study.link %> target="_blank">Explore This Case</a> 
 			</div>
 
 			<br>
