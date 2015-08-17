@@ -1,7 +1,7 @@
  
 class MainController < ApplicationController
 	def index
-		@tags = Tag.all
+		
 	end
 	def all
 		@cases = Case.all
