@@ -8,6 +8,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'rake'
 gem 'pry'
+gem 'acts-as-taggable-on', '~> 3.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
