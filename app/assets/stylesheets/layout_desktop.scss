@@ -2,11 +2,40 @@ header {
   h1 { text-align:center;}
 }
 section {
-  .questions {
-    @include span-columns(6);
-    text-align:center;  
+  @include outer-container;
+}
+.description {
+  @include span-columns(6); 
+}
+
+.description {
+  @include span-columns(6);
+  width: 100%;
+  margin-left: 30px;
+  .intro p {
+    width: 450px;
+    margin-top: 10%;
   }
-  .description {
-    @include span-columns(6); 
+}
+.questions {
+  text-align:center;  
+  @include span-columns(6);
+/*    width: 100%;*/
+  .input1 {
+    position: absolute;
+    top: 11%;
+    left: 45%;
+    padding-left: 50px;
+  }
+  .input2 {
+    position: absolute;
+    top: 11%;
+    left: 70%;
+    padding-left: 10px;
+  }
+  p {
+    margin-top: 70px;
+    margin-bottom: -50px;
+    /*display: inline-block;*/
   }
 }

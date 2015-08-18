@@ -12,13 +12,18 @@ section {
 }
 
 .description {
-  .intro {
-    @include span-columns(6);
+  @include span-columns(6);
+  width: 100%;
+  margin-left: 30px;
+  .intro p {
+    margin-top: 10%;
+    width: 450px;
   }
 }
 .questions {
-  .input {
     @include span-columns(6);
+/*    width: 100%;*/
+  .input {
     position: absolute;
     top: 10%;
     left: 60%;
@@ -27,6 +32,7 @@ section {
   p {
     margin-top: 70px;
     margin-bottom: -50px;
+    /*display: inline-block;*/
   }
 }
 
