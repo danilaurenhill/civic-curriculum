@@ -1,14 +1,26 @@
-<div class="container">
-<body>
-  <div class="page-title">
-	  <h3> ALL CASE STUDIES </h3>
-  </div>
-  <div class="cases">
-	  <div class="case-study">
-		  <% @cases.each do |case_study| %>
-	  <div class="case-number">
-		  <h4><%= case_study.id %>. <%= case_study.title %><h4>
-	  </div>
+
+<div class="page-title">
+	<h3> ALL CASE STUDIES </h3>
+</div>
+<div class="cases">
+	<div class="case-study">
+		<% @cases.each do |case_study| %>
+			<div class="case-number">
+				<h4><%= case_study.id %>. <%= case_study.title %><h4>
+			</div>
+			<div class="description">
+				<%= case_study.description %>
+				<% case_study.tools.each do |tool| %>
+					<%= tool.name %>
+				<% end %>
+				<% case_study.sectors.each do |sec| %>
+					<%= sec.name %>
+				<% end %>
+			</div>
+			<div class="link">
+				<a href=<%= case_study.link %> target="_blank">Explore This Case</a> 
+			</div>
+
 
 	  <div class="description">
 		  <p><%= case_study.description %></p>

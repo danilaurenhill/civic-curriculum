@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813192349) do
+ActiveRecord::Schema.define(version: 20150818183130) do
 
   create_table "cases", force: :cascade do |t|
     t.string   "title"
@@ -21,12 +21,61 @@ ActiveRecord::Schema.define(version: 20150813192349) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "cases_grades", id: false, force: :cascade do |t|
+    t.integer "case_id",  null: false
+    t.integer "grade_id", null: false
+  end
+
+  create_table "cases_problems", id: false, force: :cascade do |t|
+    t.integer "case_id",    null: false
+    t.integer "problem_id", null: false
+  end
+
+  create_table "cases_sectors", id: false, force: :cascade do |t|
+    t.integer "case_id",   null: false
+    t.integer "sector_id", null: false
+  end
+
+  create_table "cases_subjects", id: false, force: :cascade do |t|
+    t.integer "case_id",    null: false
+    t.integer "subject_id", null: false
+  end
+
+  create_table "cases_tools", id: false, force: :cascade do |t|
+    t.integer "case_id", null: false
+    t.integer "tool_id", null: false
+  end
+
+  create_table "grades", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "mains", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "problems", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sectors", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tools", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
