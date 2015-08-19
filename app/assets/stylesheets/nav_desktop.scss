@@ -5,7 +5,7 @@
     width: 100%;
     text-align: center;
     p {
-      color: $green;
+      color: $accent-color;
       font-size: modular-scale(-2);
       margin-right: 0px;
       font-weight: 900;
@@ -36,7 +36,7 @@ nav {
   li {
     padding: 0px 3px;
     font-size: modular-scale(-2);
-    border-right: 2px solid $green;
+    border-right: 2px solid $accent-color;
     &:last-child { border-right: none; }
     display: inline;
     a {
@@ -45,7 +45,7 @@ nav {
       padding-right: 5px;
       text-decoration: none;
     }
-    a:hover { color:$green; }
+    a:hover { color:$accent-color; }
   }
 }
 .nav-bar {
@@ -58,7 +58,7 @@ nav {
     h2 {
       margin-top: 4px;
       display: inline-block;
-      color: $green;
+      color: $accent-color;
       font-size: 18px;
       margin-right: 0px;
       &:after {
@@ -67,7 +67,7 @@ nav {
         top: 5px;
         left: 225px;
         display: inline-block;
-        background-color: $green;
+        background-color: $accent-color;
         height: 19px;
         width: 2px;
       }
@@ -77,8 +77,8 @@ nav {
       top: -7px;
       left: 230px;
       display: inline-block;
-      height: 42px;
-      width: 125px;
+      height: 36px;
+      width: 140px;
     }
   }
 }
