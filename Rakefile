@@ -19,9 +19,43 @@ namespace :seed do
 	end
 	desc "populate tags"
 	task :pop_tags => :environment do
-		tagz = ["Social Studies", "Math", "Computers", "Science", "Thug Life"]
-		tagz.each do |tag|
-			Tag.create(name: tag)
+		tagz = {
+		"sector" => ["education", "health", "democracy", "elections", "international", "finance", "energy", "transit", "housing", "social justice", "government", "media", "startups"],
+		"problem" => ["disaster response", "privacy", "ethics", "economic growth", "efficiency", "social services", "elections", "procurement"],
+		"tool" => ["machine learning", "internet of things", "networks", "open data", "data visualization", "data science", "crowd sourcing", "data analysis"],
+		"grade" => ["high school", "undergraduate college", "masters college"],
+		"subject" => ["Math", "Art", "English", "History", "Science", "Health", "CRIMINAL JUSTICE", "EDUCATION", "BIOLOGY", "NURSING", "PSYCHOLOGY", "BUSINESS"]
+		}
+		tagz.each do |tag, array_list|
+			array_list.each do |name_of_tag|
+				if tag == "sector"
+					Sector.create(name: name_of_tag.titleize)
+				elsif tag == "problem"
+					Problem.create(name: name_of_tag.titleize)
+				elsif tag == "tool"
+					Tool.create(name: name_of_tag.titleize)
+				elsif tag == "grade"
+					Grade.create(name: name_of_tag.titleize)
+				elsif tag == "subject"
+					Subject.create(name: name_of_tag.titleize)
+				else
+					# Rails.logger(name_of_tag.titleize + "didn't work")
+				end
+
+			end
 		end
+	end
+
+	desc "Testing the relationships"
+	task :rlp => :environment do
+		title = "related to edu"
+		text = "This is the story all about how my life got slip turned upside down"
+		link = "http://www.ign.com"
+		my_case = Case.create(title: title, description: text, link: link)
+		my_case.sectors << Sector.all.sample(2)
+		my_case.grades << Grade.all.sample
+		my_case.subjects << Subject.all.sample
+		my_case.tools << Tool.all.sample
+		my_case.problems << Problem.all.sample(rand(1..2))
 	end
 end

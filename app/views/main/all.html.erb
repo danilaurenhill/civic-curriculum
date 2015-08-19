@@ -9,6 +9,12 @@
 			</div>
 			<div class="description">
 				<%= case_study.description %>
+				<% case_study.tools.each do |tool| %>
+					<%= tool.name %>
+				<% end %>
+				<% case_study.sectors.each do |sec| %>
+					<%= sec.name %>
+				<% end %>
 			</div>
 			<div class="link">
 				<a href=<%= case_study.link %> target="_blank">Explore This Case</a> 

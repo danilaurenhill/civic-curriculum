@@ -1,7 +1,7 @@
 require 'pry'
 class MainController < ApplicationController
 	def index
-		@tags = Tag.all
+		# @tags = Tag.all
 	end
 	def all
 		@cases = Case.all
