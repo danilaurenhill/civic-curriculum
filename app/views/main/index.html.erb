@@ -12,7 +12,7 @@
     <div class="logo">
       <h2>Civic Tech Case Finder</h2>
       <a href="http://www.microsoft.com" target="_blank" title="Microsoft">
-      <img src="assets/w_text_msr_logo.jpg.png" >
+      <img src="assets/msr_white_logo.png" >
       </a>
     </div>
     <nav>
@@ -40,7 +40,6 @@
         <% @subjects.each do |subj| %>
           <option value=<%= subj.name %>><%= subj.name %></option>
         <% end %>
-
       </select>
       </label>
       <p>What grade level do you teach?<p>
@@ -52,20 +51,18 @@
         <% end %>
       </select>
       </label>
-      <p>What tools interest you?<p>
-      <label>
+      <div class="radio">
+        <p>What sectors interest you?</p>
         <form action="demo_form.asp" method="get">
-          <% @tools.each do |tool| %>
-          <input type="checkbox" name="tool" value=<%= tool.name %>> <%= tool.name %><br>
+          <% @sectors.each do |sector| %>
+          <input type="checkbox" name="sector" value=<%= sector.name %>> <%= sector.name %><br>
           <% end %>
-          
         </form>
-        </label>
+      </div>
     </div>
-
     <div class="input2">
       <p>Are your students technical?</p>
-    <label>
+      <label>
         <select name="sector_id" id="sector_id">
           <option selected>Select</option>
           <option value="yes">Yes</option>
@@ -73,24 +70,21 @@
           <option value="maybe">Maybe</option>
         </select>
       </label>
-      <p>What sectors interest you?<p>
-        <label>
-          <form action="demo_form.asp" method="get">
-          <% @sectors.each do |sector| %>
-            <input type="checkbox" name="sector" value=<%= sector.name %>> <%= sector.name %><br>
-          <% end %>
-          
-          </form>
-        </label>
-
       <p>What problems interest you?<p>
-      <label>
         <form action="demo_form.asp" method="get">
           <% @problems.each do |problem| %>
-            <input type="checkbox" name="problem" value=<%= problem.name %>> <%= problem.name %><br>
+          <input type="checkbox" name="problem" value=<%= problem.name %>> <%= problem.name %><br>
           <% end %>
-          </form>  
-      </label>
+        </form>  
+      <p>What tools interest you?<p>
+        <div class="radio">
+          <form action="demo_form.asp" method="get">
+            <% @tools.each do |tool| %>
+              <input type="checkbox" name="tool" value=<%= tool.name %>> <%= tool.name %><br>
+              <span></span>
+            <% end %>
+          </form>
+        </div>
     </div>
   </section>
   

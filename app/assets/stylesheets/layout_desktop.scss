@@ -37,6 +37,16 @@ section {
     top: 8%;
     left: 45%;
     padding-left: 50px;
+    .radio {
+      form {
+        color: white;
+        text-align: left;
+        margin-top: 15px;
+      }
+      p {
+        margin-top: 58px;
+      }
+    }
   }
   .input2 {
     margin-top: 50px;
@@ -44,6 +54,11 @@ section {
     top: 8%;
     left: 70%;
     padding-left: 10px;
+    form {
+      color: white;
+      text-align: left;
+      padding-bottom: 40px;
+    }
   }
   p {
     color: white;
@@ -56,7 +71,7 @@ section {
       content: '▼';
       position: absolute;
       width: 37px;
-      color: #999;
+      color: $accent-color;
       font-weight: bold;
       font-size: 16px;
       right: 2px;
@@ -74,7 +89,7 @@ section {
       -moz-appearance: none;
       appearance: none;
       background: #111;
-      color: #999;
+      color: $accent-color;
       border: none;
       outline: none;
       font-size: 14px;

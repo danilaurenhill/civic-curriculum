@@ -58,7 +58,7 @@ nav {
     h2 {
       margin-top: 4px;
       display: inline-block;
-      color: $accent-color;
+      color: white;
       font-size: 18px;
       margin-right: 0px;
       &:after {
@@ -67,18 +67,18 @@ nav {
         top: 5px;
         left: 225px;
         display: inline-block;
-        background-color: $accent-color;
+        background-color: white;
         height: 19px;
         width: 2px;
       }
     }
     img {
       position: absolute;
-      top: -7px;
+      top: -12.5px;
       left: 230px;
       display: inline-block;
-      height: 36px;
-      width: 140px;
+      height: 54px;
+      width: 150px;
     }
   }
 }
