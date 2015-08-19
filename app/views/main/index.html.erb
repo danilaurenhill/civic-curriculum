@@ -37,41 +37,29 @@
       <label>
       <select name="subject_id" class="turnintodropdown" id="subject_id">
         <option selected>Select</option>
-        <option value="math">Math</option>
-        <option value="science">Science</option>
-        <option value="history">History</option>
-        <option value="english">English</option>
-        <option value="statistics">Statistics</option>
-        <option value="philosophy">Philosophy</option>
-        <option value="forieign_language">Foreign Language</option>
+        <% @subjects.each do |subj| %>
+          <option value=<%= subj.name %>><%= subj.name %></option>
+        <% end %>
+
       </select>
       </label>
       <p>What grade level do you teach?<p>
       <label>
       <select name="grade_id" id="grade_id">
         <option selected>Select</option>
-        <option value="freshman_highschool">Freshman High School</option>
-        <option value="sophomore_highschool">Sophmore High School</option>
-        <option value="junior_highschool">Junior High School</option>
-        <option value="senior_highschool">Senior High School</option>
-        <option value="freshman_college">College Freshman</option>
-        <option value="freshman_college">College Sophomore</option>
-        <option value="freshman_college">College Junior</option>
-        <option value="freshman_college">College Senior</option>
+        <% @grades.each do |grade| %>
+          <option value=<%= grade.name %>><%= grade.name %></option>
+        <% end %>
       </select>
       </label>
       <p>What tools interest you?<p>
       <label>
-        <select name="tool_id" id="tool_id">
-          <option selected>Select</option>
-          <option value="machine_learning">Machine Learning</option>
-          <option value="networks">Networks</option>
-          <option value="open_data">Open Data</option>
-          <option value="data_visualization">Data Visualization</option>
-          <option value="data_science">Data Science</option>
-          <option value="crowd_sourcing">Crowd Sourcing</option>
-          <option value="data_analysis">Aata Analysis</option>
-        </select>
+        <form action="demo_form.asp" method="get">
+          <% @tools.each do |tool| %>
+          <input type="checkbox" name="tool" value=<%= tool.name %>> <%= tool.name %><br>
+          <% end %>
+          
+        </form>
         </label>
     </div>
 
@@ -87,36 +75,22 @@
       </label>
       <p>What sectors interest you?<p>
         <label>
-        <select name="tag_id" id="tag_id">
-          <option selected>Select</option>
-          <option value="health">Health</option>
-          <option value="democracy">Democracy</option>
-          <option value="elections">Elections</option>
-          <option value="international">International</option>
-          <option value="finance">Finance</option>
-          <option value="energy">Energy</option>
-          <option value="transit">Transit</option>
-          <option value="housing">Housing</option>
-          <option value="social_justice">Social Justice</option>
-          <option value="government">Government</option>
-          <option value="media">Media</option>
-          <option value="startups">Startups</option>
-        </select>
+          <form action="demo_form.asp" method="get">
+          <% @sectors.each do |sector| %>
+            <input type="checkbox" name="sector" value=<%= sector.name %>> <%= sector.name %><br>
+          <% end %>
+          
+          </form>
         </label>
 
       <p>What problems interest you?<p>
       <label>
-        <select name="problem_id" id="problem_id">
-          <option selected>Select</option>
-          <option value="privacy">Privacy</option>
-          <option value="ethics">Ethics</option>
-          <option value="procurement">Economic Growth</option>
-          <option value="efficiency">Efficiency</option>
-          <option value="social_services">Social Services</option>
-          <option value="economic_growth">Economic Growth</option>
-          <option value="procurement">Economic Growth</option>
-        </select>
-        </label>
+        <form action="demo_form.asp" method="get">
+          <% @problems.each do |problem| %>
+            <input type="checkbox" name="problem" value=<%= problem.name %>> <%= problem.name %><br>
+          <% end %>
+          </form>  
+      </label>
     </div>
   </section>
   

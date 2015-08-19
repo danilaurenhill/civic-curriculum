@@ -1,7 +1,11 @@
 
 class MainController < ApplicationController
 	def index
-		
+		@grades = Grade.all
+		@problems = Problem.all
+		@sectors = Sector.all
+		@subjects = Subject.all
+		@tools = Tool.all
 	end
 	def all
 		@cases = Case.all
