@@ -29,13 +29,15 @@
   </header>
   <section class="description">
     <div class="intro">
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut ipsum pretium, efficitur erat ac, posuere orci. Curabitur magna nulla, sagittis scelerisque ipsum sit amet, maximus sagittis ex. Nunc ex odio, ornare eu maximus sed, pulvinar non ante. Integer vehicula sem ultrices, dignissim est sit amet, pharetra massa.Praesent iaculis, massa a porta lacinia, metus tortor viverra ipsum, eget ornare sem velit at augue. Suspendisse ut pellentesque neque, rhoncus aliquam velit. Maecenas convallis eros sem, eu egestas ligula imperdiet vitae.</p>
     </div>
   </section>
   <section class="questions">
     <div class="input1">
       <p>What subject do you teach?<p>
-      <select name="subject_id" id="subject_id">
+      <label>
+      <select name="subject_id" class="turnintodropdown" id="subject_id">
+        <option selected>Select</option>
         <option value="math">Math</option>
         <option value="science">Science</option>
         <option value="history">History</option>
@@ -44,8 +46,11 @@
         <option value="philosophy">Philosophy</option>
         <option value="forieign_language">Foreign Language</option>
       </select>
+      </label>
       <p>What grade level do you teach?<p>
+      <label>
       <select name="grade_id" id="grade_id">
+        <option selected>Select</option>
         <option value="freshman_highschool">Freshman High School</option>
         <option value="sophomore_highschool">Sophmore High School</option>
         <option value="junior_highschool">Junior High School</option>
@@ -55,8 +60,11 @@
         <option value="freshman_college">College Junior</option>
         <option value="freshman_college">College Senior</option>
       </select>
+      </label>
       <p>What tools interest you?<p>
+      <label>
         <select name="tool_id" id="tool_id">
+          <option selected>Select</option>
           <option value="machine_learning">Machine Learning</option>
           <option value="networks">Networks</option>
           <option value="open_data">Open Data</option>
@@ -65,18 +73,23 @@
           <option value="crowd_sourcing">Crowd Sourcing</option>
           <option value="data_analysis">Aata Analysis</option>
         </select>
+        </label>
     </div>
 
     <div class="input2">
-      <p>Are your students technical?<p>
+      <p>Are your students technical?</p>
+    <label>
         <select name="sector_id" id="sector_id">
+          <option selected>Select</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
           <option value="maybe">Maybe</option>
         </select>
-
+      </label>
       <p>What sectors interest you?<p>
+        <label>
         <select name="tag_id" id="tag_id">
+          <option selected>Select</option>
           <option value="health">Health</option>
           <option value="democracy">Democracy</option>
           <option value="elections">Elections</option>
@@ -90,9 +103,12 @@
           <option value="media">Media</option>
           <option value="startups">Startups</option>
         </select>
+        </label>
 
       <p>What problems interest you?<p>
+      <label>
         <select name="problem_id" id="problem_id">
+          <option selected>Select</option>
           <option value="privacy">Privacy</option>
           <option value="ethics">Ethics</option>
           <option value="procurement">Economic Growth</option>
@@ -101,6 +117,7 @@
           <option value="economic_growth">Economic Growth</option>
           <option value="procurement">Economic Growth</option>
         </select>
+        </label>
     </div>
   </section>
      

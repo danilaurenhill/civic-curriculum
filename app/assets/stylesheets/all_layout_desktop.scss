@@ -1,0 +1,33 @@
+.cases {
+  .case-study {
+    .description {
+      p {
+        margin-top: 5px;
+        margin-left: 20px;
+        width: 50%;
+      }
+    }
+  }
+}
+
+.container body {
+  background-color: #e8e8e8
+}
+
+.cases {
+  .image {
+    img {
+      margin-right: 40px;
+      margin-top: -170px;
+      float: right;
+    }
+  }
+}
+.cases {
+  .link {
+    a {
+      text-decoration: none;
+      color: $green;
+    }
+  }
+}
