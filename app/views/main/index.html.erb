@@ -72,7 +72,17 @@
               <%= check_box_tag "tool#{i}", tool.name %><%= tool.name %><br>
             <% end %>
       </div>
-    <%= submit_tag 'Submit' %>
-    <% end %>
+    <div class="button">
+      <%= submit_tag 'Submit', :class => 'submit', :style => "color: white;
+      background-color: #00a1f1;
+      border: none;
+      height: 30px;
+      width: 150px;
+      font-size: 14px;
+      position:absolute;
+      top: 680px;
+      left: 990px" %>
+      <% end %>
+    </div>
   </section>
   

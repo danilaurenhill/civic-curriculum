@@ -69,20 +69,10 @@ section {
       text-align: left;
       padding-bottom: 23px;
     }
-    .tech {
-      margin-right: 15px;
-    }
-    .submit {
-      background-color: $accent-color;
-      font-family: 100% $font;
-      font-size: modular-scale(0);
-      padding: 6px 45px;
-      width: 150px;
-      margin-bottom: 25px;
-      a {
-        text-decoration: none;
-        color: white;
-        text-align: center;
+    .button {
+        color: red;
+        input[type="submit"] {
+          background-color: red;
       }
     }
   }
