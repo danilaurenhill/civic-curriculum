@@ -21,16 +21,17 @@ section {
   @include span-columns(6);
   width: 100%;
   margin-left: 30px;
-  .intro p {
+  .intro h3 {
+    font-weight: 400;
     width: 550px;
     margin-top: 10%;
     color: white;
+    font-size: 19px;
   }
 }
 .questions {
   text-align:center;  
   @include span-columns(6);
-/*    width: 100%;*/
   .input1 {
     margin-top: 50px;
     position: absolute;
@@ -43,35 +44,39 @@ section {
         text-align: left;
         margin-top: 15px;
       }
-      p {
-        margin-top: 58px;
+      h3 {
+        font-weight: 400;
+        text-align: left;
       }
-    }
+    } 
   }
   .input2 {
     margin-top: 50px;
     position: absolute;
     top: 8%;
-    left: 70%;
+    left: 73%;
     padding-left: 10px;
     form {
       color: white;
       text-align: left;
-      padding-bottom: 40px;
+      padding-bottom: 23px;
     }
   }
-  p {
+  h3 {
+    font-size: 19px;
+    font-weight: 400;
+    text-align: left;
     color: white;
   }
   label {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     position: relative;
     display: inline-block;
     &:after {
       content: '▼';
       position: absolute;
       width: 37px;
-      color: $accent-color;
+      color: white;
       font-weight: bold;
       font-size: 16px;
       right: 2px;
@@ -88,8 +93,8 @@ section {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      background: #111;
-      color: $accent-color;
+      background-color: rgba(0, 161, 241, 0.6);
+      color: white;
       border: none;
       outline: none;
       font-size: 14px;

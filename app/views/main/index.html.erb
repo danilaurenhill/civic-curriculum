@@ -28,12 +28,12 @@
   </header>
   <section class="description">
     <div class="intro">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut ipsum pretium, efficitur erat ac, posuere orci. Curabitur magna nulla, sagittis scelerisque ipsum sit amet, maximus sagittis ex. Nunc ex odio, ornare eu maximus sed, pulvinar non ante. Integer vehicula sem ultrices, dignissim est sit amet, pharetra massa.Praesent iaculis, massa a porta lacinia, metus tortor viverra ipsum, eget ornare sem velit at augue. Suspendisse ut pellentesque neque, rhoncus aliquam velit. Maecenas convallis eros sem, eu egestas ligula imperdiet vitae.</p>
+      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut ipsum pretium, efficitur erat ac, posuere orci. Curabitur magna nulla, sagittis scelerisque ipsum sit amet, maximus sagittis ex. Nunc ex odio, ornare eu maximus sed, pulvinar non ante. Integer vehicula sem ultrices, dignissim est sit amet, pharetra massa.Praesent iaculis, massa a porta lacinia, metus tortor viverra ipsum, eget ornare sem velit at augue. Suspendisse ut pellentesque neque, rhoncus aliquam velit. Maecenas convallis eros sem, eu egestas ligula imperdiet vitae.</h3>
     </div>
   </section>
   <section class="questions">
     <div class="input1">
-      <p>What subject do you teach?<p>
+      <h3>What subject do you teach?</h3>
       <label>
       <select name="subject_id" class="turnintodropdown" id="subject_id">
         <option selected>Select</option>
@@ -42,7 +42,7 @@
         <% end %>
       </select>
       </label>
-      <p>What grade level do you teach?<p>
+      <h3>What grade level do you teach?</h3>
       <label>
       <select name="grade_id" id="grade_id">
         <option selected>Select</option>
@@ -52,7 +52,7 @@
       </select>
       </label>
       <div class="radio">
-        <p>What sectors interest you?</p>
+        <h3>What sectors interest you?</h3>
         <form action="demo_form.asp" method="get">
           <% @sectors.each do |sector| %>
           <input type="checkbox" name="sector" value=<%= sector.name %>> <%= sector.name %><br>
@@ -61,7 +61,7 @@
       </div>
     </div>
     <div class="input2">
-      <p>Are your students technical?</p>
+      <h3>Are your students technical?</h3>
       <label>
         <select name="sector_id" id="sector_id">
           <option selected>Select</option>
@@ -70,13 +70,13 @@
           <option value="maybe">Maybe</option>
         </select>
       </label>
-      <p>What problems interest you?<p>
+      <h3>What problems interest you?</h3>
         <form action="demo_form.asp" method="get">
           <% @problems.each do |problem| %>
           <input type="checkbox" name="problem" value=<%= problem.name %>> <%= problem.name %><br>
           <% end %>
         </form>  
-      <p>What tools interest you?<p>
+      <h3>What tools interest you?</h3>
         <div class="radio">
           <form action="demo_form.asp" method="get">
             <% @tools.each do |tool| %>
