@@ -1,6 +1,6 @@
 $accent-color: #00a1f1;
 $green: #16DDA4;
-$font: Roboto, sans-serif;
+$font: 'Segoe UI', 'Frutiger', 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
 
 .background {
   position: fixed;
@@ -48,17 +48,4 @@ section {
   text-align: center;
   background-color: black;
   padding: 1px;
-}
-
-.submit {
-  margin-top: 20px;
-  display:inline-block;
-  background-color: $green;
-  cursor:pointer;
-  color:white;
-  font-family: 100% $font;
-  font-size: modular-scale(0);
-  padding: 8px 65px;
-  text-decoration:none;
-  border: none;
 }

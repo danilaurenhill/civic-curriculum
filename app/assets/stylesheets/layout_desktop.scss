@@ -22,9 +22,10 @@ section {
   width: 100%;
   margin-left: 30px;
   .intro h3 {
+    font-family: $font;
     font-weight: 400;
     width: 550px;
-    margin-top: 10%;
+    margin-top: 6.5%;
     color: white;
     font-size: 19px;
   }
@@ -35,16 +36,18 @@ section {
   .input1 {
     margin-top: 50px;
     position: absolute;
-    top: 8%;
+    top: 2.5%;
     left: 45%;
     padding-left: 50px;
     .radio {
       form {
+        font-family: $font;
         color: white;
         text-align: left;
         margin-top: 15px;
       }
       h3 {
+        font-family: $font;
         font-weight: 400;
         text-align: left;
       }
@@ -53,16 +56,35 @@ section {
   .input2 {
     margin-top: 50px;
     position: absolute;
-    top: 8%;
+    top: 2.5%;
     left: 73%;
     padding-left: 10px;
+    color: white;
     form {
+      font-family: $font;
       color: white;
       text-align: left;
       padding-bottom: 23px;
     }
+    .tech {
+      margin-right: 15px;
+    }
+    .submit {
+      background-color: $accent-color;
+      font-family: 100% $font;
+      font-size: modular-scale(0);
+      padding: 6px 45px;
+      width: 150px;
+      margin-bottom: 25px;
+      a {
+        text-decoration: none;
+        color: white;
+        text-align: center;
+      }
+    }
   }
   h3 {
+    font-family: $font;
     font-size: 19px;
     font-weight: 400;
     text-align: left;

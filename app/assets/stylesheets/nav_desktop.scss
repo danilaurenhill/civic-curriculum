@@ -44,6 +44,7 @@ nav {
       padding-left: 3px;
       padding-right: 5px;
       text-decoration: none;
+      font-family: $font;
     }
     a:hover { color:$accent-color; }
   }
@@ -56,9 +57,10 @@ nav {
     float: left;
     margin-top: 20px;
     h2 {
+      font-family: $font;
       margin-top: -5px;
       display: inline-block;
-      color: white;
+      color: $accent-color;
       font-size: 18px;
       margin-right: 0px;
       &:after {
