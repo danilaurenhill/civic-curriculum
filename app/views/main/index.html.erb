@@ -62,11 +62,11 @@
       <h3>Are your students technical?</h3>
         Yes <input class="tech" type="radio" name="group1" value="yes">
         No <input class="tech" type="radio" name="group1" value="no">
-        Maybe <input class="tech" type="radio" name="group1" value="maybe">
+        Maybe <input class="tech" type="radio" name="group1" value="maybe"><br><br>
       <h3>Which problems interest you?</h3>
             <% @problems.each_with_index do |problem, i| %>
               <%= check_box_tag "problem#{i}", problem.name %><%= problem.name %><br>
-            <% end %>
+            <% end %><br>
       <h3>Which tools interest you?</h3>
             <% @tools.each_with_index do |tool, i| %>
               <%= check_box_tag "tool#{i}", tool.name %><%= tool.name %><br>
@@ -80,7 +80,7 @@
       width: 150px;
       font-size: 14px;
       position:absolute;
-      top: 680px;
+      top: 694px;
       left: 990px" %>
       <% end %>
     </div>

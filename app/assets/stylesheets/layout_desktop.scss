@@ -69,12 +69,6 @@ section {
       text-align: left;
       padding-bottom: 23px;
     }
-    .button {
-        color: red;
-        input[type="submit"] {
-          background-color: red;
-      }
-    }
   }
   h3 {
     font-family: $font;
@@ -108,7 +102,7 @@ section {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      background-color: rgba(0, 161, 241, 0.6);
+      background-color: rgba(0, 161, 241, 0.5);
       color: white;
       border: none;
       outline: none;

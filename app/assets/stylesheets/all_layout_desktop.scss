@@ -4,16 +4,18 @@
       p {
         color: white;
         margin-top: 0px;
-        margin-left: 270px;
+        margin-left: 220px;
         text-align: left;
         width: 700px;
         height: 4px;
+        font-family: $font;
 
       }
     }
     .tag {
       p {
         color: white;
+        font-family: $font;
         margin-left: 730px;
       }
     }
@@ -34,16 +36,20 @@
 }
 .cases {
   position: relative;
-  .link {
-    a {
-      width: 170px;
-      position: absolute;
-      top: 225px;
-      left: 30px;
-      text-decoration: none;
-      color: #ffbb00;
+  .button {
+      a {
+        color: white;
+      background-color: #00a1f1;
+      border: none;
+      height: 30px;
+      width: 150px;
+      font-size: 14px;
+      position:absolute;
+      top: 694px;
+      left: 990px
+      }
     }
-  }
+
 }
 .page-title {
   h3 {
