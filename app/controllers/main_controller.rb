@@ -11,6 +11,12 @@ class MainController < ApplicationController
 		@cases = Case.all
 	end
 	def find
+		k = t.keys
+		k.delete("utf8")
+		k.delete("authenticity_token")
+		k.delete("commit")
+		k.delete("controller")
+		k.delete("action")
 		# params.keys[-4].include? "tool"
 		# @selected_tag = Tag.find_by(id: params["tag_id"])
 		# @subject = params["teach"]
