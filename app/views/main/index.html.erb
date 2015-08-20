@@ -31,8 +31,10 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut ipsum pretium, efficitur erat ac, posuere orci. Curabitur magna nulla, sagittis scelerisque ipsum sit amet, maximus sagittis ex. Nunc ex odio, ornare eu maximus sed, pulvinar non ante. Integer vehicula sem ultrices, dignissim est sit amet, pharetra massa.Praesent iaculis, massa a porta lacinia, metus tortor viverra ipsum, eget ornare sem velit at augue. Suspendisse ut pellentesque neque, rhoncus aliquam velit. Maecenas convallis eros sem, eu egestas ligula imperdiet vitae.</p>
     </div>
   </section>
+
   <section class="questions">
-    <div class="input1">
+    <%= form_tag main_find_path, method: :post do %>
+          <div class="input1">
       <p>What subject do you teach?<p>
       <label>
       <select name="subject_id" class="turnintodropdown" id="subject_id">
@@ -52,45 +54,32 @@
         <% end %>
       </select>
       </label>
-      <p>What tools interest you?<p>
-      <label>
-        <form action="demo_form.asp" method="get">
-          <% @tools.each do |tool| %>
-          <input type="checkbox" name="tool" value=<%= tool.name %>> <%= tool.name %><br>
+              <p>Which problems interest you?<p>
+              <label>
+
+          <% @problems.each_with_index do |problem, i| %>
+            <%= check_box_tag "problem#{i}", problem.name %><%= problem.name %><br>
           <% end %>
           
-        </form>
         </label>
-    </div>
+      <p>Which tools interest you?<p>
+      <label>
 
-    <div class="input2">
-      <p>Are your students technical?</p>
-    <label>
-        <select name="sector_id" id="sector_id">
-          <option selected>Select</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-          <option value="maybe">Maybe</option>
-        </select>
-      </label>
-      <p>What sectors interest you?<p>
-        <label>
-          <form action="demo_form.asp" method="get">
-          <% @sectors.each do |sector| %>
-            <input type="checkbox" name="sector" value=<%= sector.name %>> <%= sector.name %><br>
+          <% @tools.each_with_index do |tool, i| %>
+            <%= check_box_tag "tool#{i}", tool.name %><%= tool.name %><br>
+          <% end %>
+
+        </label>
+        <p>Which sector interest you?<p>
+              <label>
+
+          <% @sectors.each_with_index do |sector, i| %>
+            <%= check_box_tag "sector#{i}", sector.name %><%= sector.name %><br>
           <% end %>
           
-          </form>
         </label>
-
-      <p>What problems interest you?<p>
-      <label>
-        <form action="demo_form.asp" method="get">
-          <% @problems.each do |problem| %>
-            <input type="checkbox" name="problem" value=<%= problem.name %>> <%= problem.name %><br>
-          <% end %>
-          </form>  
-      </label>
     </div>
+    <%= submit_tag 'Submit' %>
+    <% end %>
   </section>
   
