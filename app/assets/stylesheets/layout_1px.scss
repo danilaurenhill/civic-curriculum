@@ -29,6 +29,7 @@ section {
     color: white;
     margin-top: 10%;
     width: 450px;
+    text-align: left;
   }
 }
 .questions {
@@ -41,6 +42,7 @@ section {
     padding-left: 50px;
   }
   p {
+    text-align: left;
     color: white;
   }
 }
@@ -49,21 +51,30 @@ section {
   @include outer-container;
   .case-study {
     .case-number {
-      h4 { color:white; } 
+      margin-bottom: 15px;
+      h4 { 
+        color: white;
+        font-weight: 400;
+        text-transform: capitalize;
+      } 
     } 
     @include span-columns(12);
     .description {
       padding-top: 20px;
+      width: 600px;
+      margin-left: 40px;
     }
     .link {
       padding-top: 10px;
       a { 
         font-weight: bold;
-        color: #4668C5;
        }
       a:hover {
-        color: #002050;
+        color: $accent-color;
       }
+    }
+    .image {
+      margin-top: 36px;
     }
   }
 }

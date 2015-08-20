@@ -12,7 +12,7 @@
     <div class="logo">
       <h2>Civic Tech Case Finder</h2>
       <a href="http://www.microsoft.com" target="_blank" title="Microsoft">
-      <img src="assets/msr_logo.jpg" >
+      <img src="assets/msr_white_logo.png" >
       </a>
     </div>
     <nav>
@@ -28,24 +28,28 @@
   </header>
   <section class="description">
     <div class="intro">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut ipsum pretium, efficitur erat ac, posuere orci. Curabitur magna nulla, sagittis scelerisque ipsum sit amet, maximus sagittis ex. Nunc ex odio, ornare eu maximus sed, pulvinar non ante. Integer vehicula sem ultrices, dignissim est sit amet, pharetra massa.Praesent iaculis, massa a porta lacinia, metus tortor viverra ipsum, eget ornare sem velit at augue. Suspendisse ut pellentesque neque, rhoncus aliquam velit. Maecenas convallis eros sem, eu egestas ligula imperdiet vitae.</p>
+      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut ipsum pretium, efficitur erat ac, posuere orci. Curabitur magna nulla, sagittis scelerisque ipsum sit amet, maximus sagittis ex. Nunc ex odio, ornare eu maximus sed, pulvinar non ante. Integer vehicula sem ultrices, dignissim est sit amet, pharetra massa.Praesent iaculis, massa a porta lacinia, metus tortor viverra ipsum, eget ornare sem velit at augue. Suspendisse ut pellentesque neque, rhoncus aliquam velit. Maecenas convallis eros sem, eu egestas ligula imperdiet vitae.</h3>
     </div>
   </section>
 
   <section class="questions">
+<<<<<<< HEAD
     <%= form_tag main_find_path, method: :post do %>
           <div class="input1">
       <p>What subject do you teach?<p>
+=======
+    <div class="input1">
+      <h3>What subject do you teach?</h3>
+>>>>>>> f7423abd5d49182a5e5e22a1dc3c65055c3e50a7
       <label>
       <select name="subject_id" class="turnintodropdown" id="subject_id">
         <option selected>Select</option>
         <% @subjects.each do |subj| %>
           <option value=<%= subj.name %>><%= subj.name %></option>
         <% end %>
-
       </select>
       </label>
-      <p>What grade level do you teach?<p>
+      <h3>What grade level do you teach?</h3>
       <label>
       <select name="grade_id" id="grade_id">
         <option selected>Select</option>
@@ -53,7 +57,6 @@
           <option value=<%= grade.name %>><%= grade.name %></option>
         <% end %>
       </select>
-      </label>
               <p>Which problems interest you?<p>
               <label>
 
