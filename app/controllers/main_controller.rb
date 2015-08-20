@@ -11,9 +11,10 @@ class MainController < ApplicationController
 		@cases = Case.all
 	end
 	def find
-		@selected_tag = Tag.find_by(id: params["tag_id"])
-		@subject = params["teach"]
-		@grade = params["grade"]
-		# binding.pry
+		# params.keys[-4].include? "tool"
+		# @selected_tag = Tag.find_by(id: params["tag_id"])
+		# @subject = params["teach"]
+		# @grade = params["grade"]
+		binding.pry
 	end
 end

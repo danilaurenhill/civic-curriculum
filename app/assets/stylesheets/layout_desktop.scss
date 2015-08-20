@@ -34,6 +34,8 @@ section {
   text-align:center;  
   @include span-columns(6);
   .input1 {
+    color: white;
+    text-align: left;
     margin-top: 50px;
     position: absolute;
     top: 2.5%;
@@ -54,6 +56,7 @@ section {
     } 
   }
   .input2 {
+    text-align: left;
     margin-top: 50px;
     position: absolute;
     top: 2.5%;
