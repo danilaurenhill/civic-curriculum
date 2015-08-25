@@ -19,9 +19,14 @@
 @import "nav_mobile";
 @import "elements_mobile";
 @import "sidebar_mobile";
+@import "tags_mobile";
+@import "article_mobile";
+
 
 @media screen and (min-width: 750px) {
   @import "nav_desktop";
   @import "elements_desktop";
   @import "sidebar_desktop";
+  @import "tags_desktop";
+  @import "article_desktop";
 }

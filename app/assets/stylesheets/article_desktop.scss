@@ -1,0 +1,44 @@
+section {
+  @include span-columns(9);
+  h4.notice {
+    margin-top: 0;
+    font-style: italic;
+  }
+}
+article {
+  @include clearfix;
+  border: 1px solid $lightgray;
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 30px;
+  h3 { margin-top: 0px; }
+}
+
+.tags {
+  float: left;
+}
+
+.expand {
+  position: relative;
+  float: right;
+  display: block;
+  background-color: white;
+  padding: 2px 7px;
+  padding-right: 21px;
+  border: 1px solid $lightgray;
+  text-decoration: none;
+  color: $msr-blue;
+  text-align: center;
+
+  h4 { 
+    margin: 0px; 
+    font-weight: 400;
+    &:after { 
+      content: '▼';
+      position: absolute;
+      color: $msr-blue;
+      padding-left: 5px;
+    }
+
+  }
+}

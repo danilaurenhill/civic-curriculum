@@ -1,8 +1,10 @@
-header { background-color: black; }
+header { 
+  background-color: black; 
+  border-bottom: 1px solid #3D3D3D;
+}
 nav {
-  @include outer-container;
   @include clearfix();
-  
+  @include outer-container;
   .logo img {
     width: 140px;
     float: right;

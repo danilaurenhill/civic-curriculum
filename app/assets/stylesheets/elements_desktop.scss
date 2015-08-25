@@ -1,10 +1,14 @@
 .main-questions {
+  background-color: black;
   text-align: center;
-  padding: 25px 25px;
+  padding: 50px 0px;
+  margin-bottom: 50px;
+
   h2 {
     display: inline;
     margin-right: 10px;
     margin-left: 10px;
+    color: white;
   }
   select {
     display: inline;

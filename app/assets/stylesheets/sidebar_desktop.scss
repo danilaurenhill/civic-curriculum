@@ -1,11 +1,26 @@
 aside {
-  @include span-columns(2);
-  h4 {
+  @include span-columns(3);
+  background-color: white;
+  border: 1px solid $lightgray;
+  position: relative;
+  padding: 0px 20px;
+  .aside-toggle {
+    position: absolute;
+    right: 20px;
     text-align: right;
   }
   .tag-category {
+    margin-bottom: 20px;
     h4 {
         text-align: left;
+    }
+    p {
+      display: block;
+    }
+    input[type="radio"] {
+      margin-right: 7px;
+      text-align: left;
+      display: inline;
     }
   }
 }

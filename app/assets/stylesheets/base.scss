@@ -1,9 +1,17 @@
 $font: 'Segoe UI', 'Frutiger', 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+$lightgray: #E4E4E4;
+$sector: #FF9966;
+$problem: #66CC66;
+$method: #FF0000;
+$msr-blue: #00a1f1;
 
 * {
   font-family: $font;
 }
-body { margin: 0px; }
+body { 
+  margin: 0px; 
+  background-color: #F8F8F8;
+}
 h1 {
   color: black;
   font-size: modular-scale(1);
