@@ -16,13 +16,12 @@
 @import "neat";
 @import "base";
 
-@import "layout_1px";
-@import "footer_1px";
-@import "all_layout_1px";
+@import "nav_mobile";
+@import "elements_mobile";
+@import "sidebar_mobile";
 
 @media screen and (min-width: 750px) {
-  @import "layout_desktop";
-  @import "footer_desktop";
   @import "nav_desktop";
-  @import "all_layout_desktop"
+  @import "elements_desktop";
+  @import "sidebar_desktop";
 }

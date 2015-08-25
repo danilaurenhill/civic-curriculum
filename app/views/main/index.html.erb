@@ -1,88 +1,103 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Civic Tech </title>
-    <link href="./stylesheets/base.scss" rel="stylesheet">
-    <link
-    href='http://fonts.googleapis.com/css?family=Roboto:900,500,400,300,100' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-  <div class="nav-bar">
+<header>
+  <nav>
+    <div class="title">
+      <h1>Civic Tech Case Finder</h1>
+      <p>Case studies on civic tech topics</p>
+    </div>
     <div class="logo">
-      <h2>Civic Tech Case Finder</h2>
-      <a href="http://www.microsoft.com" target="_blank" title="Microsoft">
-      <img src="assets/msr_white_logo.png" >
-      </a>
+      <a href="#"><%=image_tag "msr_white_logo.png"%></a>
     </div>
-    <nav>
-      <div class="nav-list">
-        <ul>
-          <li><a href="/all">See All Cases</a></li>
-          <li><a href="#section-2" title="SECTION 2">Contact</a></li>
-          <li><a href="#section-3" title="SECTION 3">Terms & Conditions</a></li>
-        </ul>          
-    </nav>
+  </nav>
+</header>
+<div class="main">
+  <div class="main-questions">
+    <h2>I teach</h2>
+    <label>
+      <select>
+        <option value="Math">Math</option>
+        <option value="English">English</option>
+        <option value="Science">Science</option>
+      </select>
+    </label>
+    <h2>at the</h2>
+      <label>
+        <select>
+          <option value="High School">High School</option>
+          <option value="Undergraduate School">Undergraduate School</option>
+          <option value="Graduate School">  Graduate School</option>
+        </select>
+      </label>
+    <h2>level</h2>
   </div>
-  <header>
-  </header>
-  <section class="description">
-    <div class="intro">
-      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut ipsum pretium, efficitur erat ac, posuere orci. Curabitur magna nulla, sagittis scelerisque ipsum sit amet, maximus sagittis ex. Nunc ex odio, ornare eu maximus sed, pulvinar non ante. Integer vehicula sem ultrices, dignissim est sit amet, pharetra massa.Praesent iaculis, massa a porta lacinia, metus tortor viverra ipsum, eget ornare sem velit at augue. Suspendisse ut pellentesque neque, rhoncus aliquam velit. Maecenas convallis eros sem, eu egestas ligula imperdiet vitae.</h3>
+  <aside>
+    <h4>all | none</h4>
+    <div class="tag-category">
+      <p>technical</p>
+      <input type="radio" name="technical"   value="yes">yes
+      <input type="radio" name="technical"   value="no">no
+      <input type="radio" name="technical"   value="either">either
     </div>
-  </section>
-
-  <section class="questions">
-    <%= form_tag main_find_path, method: :post do %>
-          <div class="input1">
-      <p>What subject do you teach?<p>
-      <label>
-      <select name="subject_id" class="turnintodropdown" id="subject_id">
-        <option selected>Select</option>
-        <% @subjects.each do |subj| %>
-          <option value=<%= subj.name %>><%= subj.name %></option>
-        <% end %>
-      </select>
-      </label>
-      <h3>What grade level do you teach?</h3>
-      <label>
-      <select name="grade_id" id="grade_id">
-        <option selected>Select</option>
-        <% @grades.each do |grade| %>
-          <option value=<%= grade.name %>><%= grade.name %></option>
-        <% end %>
-      </select>
-      </label>
-        <h3>Which sector interest you?</h3>
-          <% @sectors.each_with_index do |sector, i| %>
-            <%= check_box_tag "sector#{i}", sector.name %><%= sector.name %><br>
-          <% end %>
+    <div class="tag-category">
+      <p>sector</p>
+      <a class="tag"><h4>Social Justice</h4></a>
+      <a class="tag"><h4>Health</h4></a>
+      <a class="tag"><h4>International</h4></a>
+      <a class="tag"><h4>Transit</h4></a>
+      <a class="tag"><h4>Energy</h4></a>
+      <a class="tag"><h4>Government</h4></a>
+      <a class="tag"><h4>Startups</h4></a>
+      <a class="tag"><h4>Housing</h4></a>
+      <a class="tag"><h4>Education</h4></a>
+      <a class="tag"><h4>Media</h4></a>
+      <a class="tag"><h4>Finance</h4></a>
     </div>
-    <div class="input2">
-      <h3>Are your students technical?</h3>
-        Yes <input class="tech" type="radio" name="group1" value="yes">
-        No <input class="tech" type="radio" name="group1" value="no">
-        Maybe <input class="tech" type="radio" name="group1" value="maybe"><br><br>
-      <h3>Which problems interest you?</h3>
-            <% @problems.each_with_index do |problem, i| %>
-              <%= check_box_tag "problem#{i}", problem.name %><%= problem.name %><br>
-            <% end %><br>
-      <h3>Which tools interest you?</h3>
-            <% @tools.each_with_index do |tool, i| %>
-              <%= check_box_tag "tool#{i}", tool.name %><%= tool.name %><br>
-            <% end %>
+    <div class="tag-category">
+      <p>problem</p>
+      <a class="tag"><h4>Disaster Response</  h4></a>
+      <a class="tag"><h4>Economic Growth</h4>  </a>
+      <a class="tag"><h4>Ethics</h4></a>
+      <a class="tag"><h4>Efficiency</h4></a>
+      <a class="tag"><h4>Privacy</h4></a>
+      <a class="tag"><h4>Elections</h4></a>
+      <a class="tag"><h4>Procurement</h4></a>
+      <a class="tag"><h4>Social Services</h4>  </a>
+    </div>
+    <div class="tag-category">
+      <p>method</p>
+      <a class="tag"><h4>Machine Learning</h4  ></a>
+      <a class="tag"><h4>Internet of Things</  h4></a>
+      <a class="tag"><h4>Networks</h4></a>
+      <a class="tag"><h4>Open Data</h4></a>
+      <a class="tag"><h4>Data Visualization</  h4></a>
+      <a class="tag"><h4>Data Science</h4></a  >
+      <a class="tag"><h4>Crowd Sourcing</h4>  </a>
+      <a class="tag"><h4>Data Analysis</h4></  a>
+    </div>
+  </aside>
+  <section>
+    <h4>We found 38 results</h4>
+    <article>
+      <h3>Bluebutton Initiative</h3>
+      <p>Increase the transparency and access to their health information, in order to   make more informed decisions about their health, care for their famil  members,   and share information with their providers.</p>
+      <a href="#"></a>
+      <div class="tags">
+        <a class="tag"><h4>Social Justice</h4></a>
+        <a class="tag"><h4>Health</h4></a>
+        <a class="tag"><h4>Ethics</h4></a>
       </div>
-    <div class="button">
-      <%= submit_tag 'Submit', :class => 'submit', :style => "color: white;
-      background-color: #00a1f1;
-      border: none;
-      height: 30px;
-      width: 150px;
-      font-size: 14px;
-      position:absolute;
-      top: 694px;
-      left: 990px" %>
-      <% end %>
-    </div>
+      <a href="#" class="expand">More</a> 
+    </article>
+    <article>
+      <h3>Green Button Connect</h3>
+      <p>In collaboration with the White   House Office of Science & Technology Policthe Department of Energy, NIST, the North American Energy Standards Boardutilities, and vendors, a team of Fellows worked to double the Green   Buttoecosystem, improve Green Button data, and leverage Green Button in federaagencies. Reduce waste and shrink bills by providing consumers with secure, easto-understand information about how they are using energy in their householdsIn collaboration with the White House Office of Science & Technology Policy, thDepartment of Energy, NIST, the North American Energy Standards Boardutilities, and vendors, a team of Fellows worked to double the Green Buttoecosystem, improve Green Button data, and leverage Green Button in federaagencies. 100 million Americans and 8 million Canadians have access to theipersonalized energy data; 66,000+ individual downloads of personal energy data.</p>
+      <a href="#"></a>
+      <div class="tags">
+        <a class="tag"><h4>Open Data</h4></a>
+        <a class="tag"><h4>Health</h4></a>
+        <a class="tag"><h4>Privacy</h4></a>
+      </div>
+      <a href="#" class="expand">More</a> 
+    </article>
   </section>
+</div>
   
