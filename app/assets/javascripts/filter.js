@@ -105,7 +105,6 @@ $( document ).ready(function() {
       newHtml += "<a href='#' class='expand'><h4>More</h4></a> "
       newHtml += "  </article>"   
     }
-    debugger;
     $(".cases").html(newHtml);   
   });
 
