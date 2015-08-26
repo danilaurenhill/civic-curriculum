@@ -3,7 +3,7 @@ section {
   h4.notice {
     margin-top: 0;
     font-style: italic;
-  }
+}
 }
 article {
   @include clearfix;
@@ -11,9 +11,30 @@ article {
   background-color: white;
   padding: 25px;
   margin-bottom: 30px;
-  h3 { 
-    margin-top: 0px; 
+  height: 200px;
+  position: relative;
+  h3 {
+    margin-top: 0px;
+}
+.article-image {
+  img {
+    position: absolute;
+    height: 200px;
+    top: 0;
+    left: 0;
   }
+}
+  .image-box {
+    float: left;
+    width: 200px;
+    height: 100%;
+  }
+}
+
+.more-info {
+  @include clearfix;
+  background-color: yellow;
+  float: none;
 }
 
 .tags {
@@ -40,7 +61,7 @@ article {
       position: absolute;
       color: $msr-blue;
       padding-left: 5px;
-    }
-
   }
+
+}
 }
