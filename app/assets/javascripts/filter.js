@@ -69,7 +69,7 @@ $( document ).ready(function() {
 		}
 	]
 
-    $("a").on("click", function(){
+    $("a.tag").on("click", function(){
     var clicked = $(this).data("tag");
     var found = $.inArray(clicked, tags);
     if (found >= 0) {
