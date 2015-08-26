@@ -1,0 +1,7 @@
+a.tag {
+  text-decoration: none;
+  color: inherit;
+}
+.problem a.tag:hover h4 { border-color: $problem ; }
+.sector a.tag:hover h4 { border-color: $sector ; }
+.method a.tag:hover h4 { border-color: $method ; }
