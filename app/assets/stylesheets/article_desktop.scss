@@ -22,13 +22,13 @@ article {
     height: 200px;
     top: 0;
     left: 0;
-  }
 }
-  .image-box {
-    float: left;
-    width: 200px;
-    height: 130px;
-  }
+}
+.image-box {
+  float: left;
+  width: 200px;
+  height: 130px;
+}
 }
 
 .meta-data {
@@ -37,7 +37,13 @@ article {
     width: 200px;
     height: 100%;
     float: left;
-  }
+    a {
+      background: $msr-blue;
+      padding: 5px 50px;
+      color: white;
+      text-decoration: none;
+    }
+}
 }
 
 .article-text {
@@ -51,7 +57,7 @@ article {
   .share-links {
     width: 200px;
     float: left;
-  }
+}
 }
 
 .tags {
@@ -70,14 +76,20 @@ article {
   color: $msr-blue;
   text-align: center;
 
+  &.more h4:after {
+    content: '▼';
+  }
+  &.collapse h4:after {
+    content: '▲';
+  }
+
   h4 { 
     margin: 0px; 
     font-weight: 400;
     &:after { 
-      content: '▼';
       position: absolute;
       color: $msr-blue;
       padding-left: 5px;
-  }
+}
 }
 }

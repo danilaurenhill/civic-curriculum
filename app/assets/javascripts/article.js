@@ -4,6 +4,7 @@ $(document).ready(function(){
     $(this).closest("article").find(".more-info").slideDown();
     $(this).closest("article").height("auto");
     $(this).addClass("collapse").removeClass("more")
+    $(this).html("<h4>Less</h4>")
     return false;
   });
   $("article").on("click", "a.collapse", function(e){
@@ -11,6 +12,7 @@ $(document).ready(function(){
     $(this).closest("article").find(".more-info").slideUp();
     $("article .more-info").animate({display: "none"}, 500);
     $(this).addClass("more").removeClass("collapse");
+    $(this).html("<h4>More</h4>")
     return false;
   });
     return false;
