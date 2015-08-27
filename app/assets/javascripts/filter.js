@@ -89,9 +89,9 @@ $( document ).ready(function() {
       newHtml += "</div>";
       newHtml += "<div class='meta-data'>";
       newHtml += "<span class='share-links'>";
-      newHtml += "<a class='tag'><h4>T</h4></a>";
-      newHtml += "<a class='tag'><h4>F</h4></a>";
-      newHtml += "<a class='tag'><h4>M</h4></a>";
+      newHtml += "<a class='tag'><h4><i class='fa fa-twitter'></i></h4></a>";
+      newHtml += "<a class='tag'><h4><i class='fa fa-envelope'></i></h4></a>";
+      newHtml += "<a class='tag'><h4><i class='fa fa-facebook'></i></h4></a>";
       newHtml += "</span>";
       newHtml += "<div class='text-tags'>";
       newHtml += "<div class='tags'>";
@@ -126,36 +126,36 @@ $( document ).ready(function() {
       $(".more-info .image-box").height(height + 30);
       return false;
     });
-};
+  };
 
-loadJson(json);
-$(".aside-toggle").on("click", function(){
   loadJson(json);
+  $(".aside-toggle").on("click", function(){
+    loadJson(json);
   var dataTags=$("aside .tag");
   for(i = 0; i < dataTags.length; i++){
     $(dataTags[i]).find("h4").css({"background-color":"white"});
   };
-});
+  });
 
-$(document).on("click", "a.tag", function(){
-  var clicked = $(this).data("tag");
-  var found = $.inArray(clicked, tags);
-  if (found >= 0) {
-    tags.splice(found, 1);
-    $(this).find("h4").css({"background-color":"white"});
-  } else if( found < 0 ) {
-    $(this).find("h4").css({"background-color":"#EEE"});
-    tags.push(clicked);
-  }
-  var tagOptions = $("aside .tag")
-  newJson = [];
-  for(i = 0; i < tags.length; i++){
-    for(z = 0; z < json.length; z++){
-      if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
-        newJson.push(json[z]);
-      }
+  $(document).on("click", "a.tag", function(){
+    var clicked = $(this).data("tag");
+    var found = $.inArray(clicked, tags);
+    if (found >= 0) {
+      tags.splice(found, 1);
+      $(this).find("h4").css({"background-color":"white"});
+    } else if( found < 0 ) {
+      $(this).find("h4").css({"background-color":"#EEE"});
+      tags.push(clicked);
     }
-  };
-  loadJson(newJson);
+    var tagOptions = $("aside .tag")
+    newJson = [];
+    for(i = 0; i < tags.length; i++){
+      for(z = 0; z < json.length; z++){
+        if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
+          newJson.push(json[z]);
+        }
+      }
+    };
+    loadJson(newJson);
 });
 });
