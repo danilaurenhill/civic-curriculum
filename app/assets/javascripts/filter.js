@@ -131,6 +131,10 @@ $( document ).ready(function() {
 loadJson(json);
 $(".aside-toggle").on("click", function(){
   loadJson(json);
+  var dataTags=$("aside .tag");
+  for(i = 0; i < dataTags.length; i++){
+    $(dataTags[i]).find("h4").css({"background-color":"white"});
+  };
 });
 
 $(document).on("click", "a.tag", function(){
