@@ -33,14 +33,19 @@ article {
 
 .meta-data {
   @include clearfix;
-  a.article-link {
-      background: $msr-blue;
-      padding: 2px 30px;
-      color: white;
-      text-decoration: none;
-      font-size: modular-scale(-1);
-    }
+  .share-links {
+    width: 200px;
+    float: left;
+  }
 }
+
+a.article-link {
+  background: $msr-blue;
+  padding: 2px 30px;
+  color: white;
+  text-decoration: none;
+  font-size: modular-scale(-1);
+  }
 
 .article-text {
   height: 130px;
@@ -48,13 +53,9 @@ article {
 
 .more-info {
   @include clearfix;
-  float: none;
   padding-bottom: 30px;
 }
-  .share-links {
-    width: 200px;
-    float: left;
-}
+
 
 .tags {
   float: left;
