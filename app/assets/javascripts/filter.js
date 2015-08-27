@@ -71,47 +71,51 @@ $( document ).ready(function() {
 
   $( ".main-questions label select#school").change(function() {
     var tag = $(this).val();
-    var schoolArray = ["high-school", "undergraduate-school", "graduate-school"];
-    for (var i = 0; i < schoolArray.length; i++) {
-        var found = $.inArray(schoolArray[i], tags);
-        if (found >= 0) {
-          tags.splice(found, 1);
-        };
-    };
-    tags.push(tag);
+    if(tag != ""){
+      var schoolArray = ["high-school", "undergraduate-school", "graduate-school"];
+      for (var i = 0; i < schoolArray.length; i++) {
+          var found = $.inArray(schoolArray[i], tags);
+          if (found >= 0) {
+            tags.splice(found, 1);
+          };
+      };
+      tags.push(tag);
 
-    newJson = [];
-    for(i = 0; i < tags.length; i++){
-      for(z = 0; z < json.length; z++){
-        if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
-          newJson.push(json[z]);
+      newJson = [];
+      for(i = 0; i < tags.length; i++){
+        for(z = 0; z < json.length; z++){
+          if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
+            newJson.push(json[z]);
+          }
         }
-      }
-    };
-    loadJson(newJson);
+      };
+      loadJson(newJson);
+    }
   });
     
   $( ".main-questions label select#subject").change(function() {
     var tag = $(this).val();
-    var schoolArray = ["economics", "statistics", "environmental", "politics", "history"];
-    for (var i = 0; i < schoolArray.length; i++) {
-        var found = $.inArray(schoolArray[i], tags);
-        if (found >= 0) {
-          tags.splice(found, 1);
-        };
-    };
-    tags.push(tag);
+    if (tag != "") {
+      var schoolArray = ["economics", "statistics", "environmental", "politics", "history"];
+      for (var i = 0; i < schoolArray.length; i++) {
+          var found = $.inArray(schoolArray[i], tags);
+          if (found >= 0) {
+            tags.splice(found, 1);
+          };
+      };
+      tags.push(tag);
 
-    newJson = [];
-    for(i = 0; i < tags.length; i++){
-      for(z = 0; z < json.length; z++){
-        if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
-          newJson.push(json[z]);
+      newJson = [];
+      for(i = 0; i < tags.length; i++){
+        for(z = 0; z < json.length; z++){
+          if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
+            newJson.push(json[z]);
+          }
         }
-      }
-    };
+      };
 
-    loadJson(newJson);
+      loadJson(newJson);  
+    };
   });
 
 
