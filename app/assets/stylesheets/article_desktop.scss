@@ -33,17 +33,13 @@ article {
 
 .meta-data {
   @include clearfix;
-  .article-link {
-    width: 200px;
-    height: 100%;
-    float: left;
-    a {
+  a.article-link {
       background: $msr-blue;
-      padding: 5px 50px;
+      padding: 2px 30px;
       color: white;
       text-decoration: none;
+      font-size: modular-scale(-1);
     }
-}
 }
 
 .article-text {
