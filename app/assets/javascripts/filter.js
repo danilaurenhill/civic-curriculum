@@ -89,7 +89,7 @@ $( document ).ready(function() {
       newHtml += "</div>";
       newHtml += "<div class='meta-data'>";
       newHtml += "<span class='share-links'>";
-      newHtml += "<a class='tag'><h4></h4></a>";
+      newHtml += "<a class='tag'><h4>T</h4></a>";
       newHtml += "<a class='tag'><h4>F</h4></a>";
       newHtml += "<a class='tag'><h4>M</h4></a>";
       newHtml += "</span>";
