@@ -67,7 +67,54 @@ $( document ).ready(function() {
     picture: "/assets/vet-emp-center.png",
     link: "https://presidentialinnovationfellows.gov/projects"
   }
-  ]
+  ];
+
+  $( ".main-questions label select#school").change(function() {
+    var tag = $(this).val();
+    var schoolArray = ["high-school", "undergraduate-school", "graduate-school"];
+    for (var i = 0; i < schoolArray.length; i++) {
+        var found = $.inArray(schoolArray[i], tags);
+        if (found >= 0) {
+          tags.splice(found, 1);
+        };
+    };
+    tags.push(tag);
+
+    newJson = [];
+    for(i = 0; i < tags.length; i++){
+      for(z = 0; z < json.length; z++){
+        if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
+          newJson.push(json[z]);
+        }
+      }
+    };
+    loadJson(newJson);
+  });
+    
+  $( ".main-questions label select#subject").change(function() {
+    var tag = $(this).val();
+    var schoolArray = ["economics", "statistics", "environmental", "politics", "history"];
+    for (var i = 0; i < schoolArray.length; i++) {
+        var found = $.inArray(schoolArray[i], tags);
+        if (found >= 0) {
+          tags.splice(found, 1);
+        };
+    };
+    tags.push(tag);
+
+    newJson = [];
+    for(i = 0; i < tags.length; i++){
+      for(z = 0; z < json.length; z++){
+        if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
+          newJson.push(json[z]);
+        }
+      }
+    };
+
+    loadJson(newJson);
+  });
+
+
 
   var loadJson = function(newJson){
     newHtml= "";
