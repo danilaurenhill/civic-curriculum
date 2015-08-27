@@ -17,3 +17,6 @@ $(document).ready(function(){
   });
     return false;
 });
+
+
+// $("tag-category sector, tag-category problem, tag-category method").hide();
