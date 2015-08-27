@@ -89,9 +89,9 @@ $( document ).ready(function() {
       newHtml += "</div>";
       newHtml += "<div class='meta-data'>";
       newHtml += "<span class='share-links'>";
-      newHtml += "<a class='tag'><h4>T</h4></a>";
-      newHtml += "<a class='tag'><h4>F</h4></a>";
-      newHtml += "<a class='tag'><h4>M</h4></a>";
+      newHtml += "<a class='tag'><h4><i class='fa fa-twitter'></i></h4></a>";
+      newHtml += "<a class='tag'><h4><i class='fa fa-envelope'></i></h4></a>";
+      newHtml += "<a class='tag'><h4><i class='fa fa-facebook'></i></h4></a>";
       newHtml += "</span>";
       newHtml += "<div class='text-tags'>";
       newHtml += "<div class='tags'>";
