@@ -107,70 +107,6 @@ $( document ).ready(function() {
     }
     $(".cases").html(newHtml);
     $("article .more-info").hide();
-  };
-
-  loadJson(json);
-  $(".aside-toggle").on("click", function(){
-    loadJson(json);
-  });
-
-
-  $(document).on("click", "a.tag", function(){
-    var clicked = $(this).data("tag");
-    var found = $.inArray(clicked, tags);
-    if (found >= 0) {
-      tags.splice(found, 1);
-      $(this).find("h4").css({"background-color":"white"});
-    } else if( found < 0 ) {
-      $(this).find("h4").css({"background-color":"#EEE"});
-      tags.push(clicked);
-    }
-    var tagOptions = $("aside .tag")
-    newJson = [];
-    for(i = 0; i < tags.length; i++){
-      for(z = 0; z < json.length; z++){
-        if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
-          newJson.push(json[z]);
-        }
-      }
-    };
-    newHtml= "";
-    newHtml += "<h4 class='notice'>We found "+ newJson.length +" results</h4>"
-    for(i = 0; i < newJson.length; i++){
-      newHtml += "<article>";
-      newHtml += "<div class='article-synopsis'>";
-      newHtml += "<div class='article-image'>";
-      newHtml += "<img src='"+ newJson[i].picture +"'>";
-      newHtml += "</div>";
-      newHtml += "<div class='image-box'></div>";
-      newHtml += "<div class='article-text'>";
-      newHtml += "<h3>"+ newJson[i].name +"</h3>";
-      newHtml += "<p class='preview'>"+ newJson[i].preview +"</p>";
-      newHtml += "</div>";
-      newHtml += "<div class='more-info'>";
-      newHtml += "<div class='image-box'></div>";
-      newHtml += "<p class='description'>"+ newJson[i].description +"</p>";
-      newHtml += "</div>";
-      newHtml += "<div class='meta-data'>";
-      newHtml += "<span class='share-links'>";
-      newHtml += "<a class='tag'><h4>T</h4></a>";
-      newHtml += "<a class='tag'><h4>F</h4></a>";
-      newHtml += "<a class='tag'><h4>M</h4></a>";
-      newHtml += "</span>";
-      newHtml += "<div class='text-tags'>";
-      newHtml += "<div class='tags'>";
-      newHtml += "<a class='article-link' href="+ newJson[i].link +">View</a>";
-      for(z = 0; z < newJson[i].tags.length; z++){
-        newHtml += "<a class='tag'><h4>"+newJson[i].tags[z].charAt(0).toUpperCase() + newJson[i].tags[z].slice(1)+"</h4></a>";
-      }
-      newHtml += "</div>";
-      newHtml += "<a href='#' class='expand more'><h4>More</h4></a>";
-      newHtml += "</div>";
-      newHtml += "</div>";
-      newHtml += "</article>";
-    }
-    $(".cases").html(newHtml);
-    $("article .more-info").hide();
     $("article").on("click", "a.more", function(e){
       $(this).closest("article").find(".more-info").slideDown();
       $(this).closest("article").height("auto");
@@ -189,5 +125,33 @@ $( document ).ready(function() {
       var height = $(".more-info .description").height();
       $(".more-info .image-box").height(height + 30);
       return false;
-    });  });
+    });
+};
+
+loadJson(json);
+$(".aside-toggle").on("click", function(){
+  loadJson(json);
+});
+
+$(document).on("click", "a.tag", function(){
+  var clicked = $(this).data("tag");
+  var found = $.inArray(clicked, tags);
+  if (found >= 0) {
+    tags.splice(found, 1);
+    $(this).find("h4").css({"background-color":"white"});
+  } else if( found < 0 ) {
+    $(this).find("h4").css({"background-color":"#EEE"});
+    tags.push(clicked);
+  }
+  var tagOptions = $("aside .tag")
+  newJson = [];
+  for(i = 0; i < tags.length; i++){
+    for(z = 0; z < json.length; z++){
+      if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
+        newJson.push(json[z]);
+      }
+    }
+  };
+  loadJson(newJson);
+});
 });
