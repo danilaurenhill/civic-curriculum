@@ -110,6 +110,10 @@ $( document ).ready(function() {
   };
 
   loadJson(json);
+  $(".aside-toggle").on("click", function(){
+    loadJson(json);
+  });
+
 
   $(document).on("click", "a.tag", function(){
     var clicked = $(this).data("tag");
