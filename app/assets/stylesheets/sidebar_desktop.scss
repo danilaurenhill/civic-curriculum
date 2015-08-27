@@ -1,4 +1,8 @@
 aside {
+  h4 a {
+    color: gray;
+    text-decoration: none;
+  }
   @include span-columns(3);
   background-color: white;
   border: 1px solid $lightgray;
@@ -18,9 +22,9 @@ aside {
       display: block;
     }
     input[type="radio"] {
-      margin-right: 7px;
-      text-align: left;
       display: inline;
+      text-align: left;
+      margin-left: 18px;
     }
   }
 }

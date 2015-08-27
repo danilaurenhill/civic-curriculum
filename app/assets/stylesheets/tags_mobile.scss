@@ -5,3 +5,24 @@ a.tag {
 .problem a.tag:hover h4 { border-color: $problem ; }
 .sector a.tag:hover h4 { border-color: $sector ; }
 .method a.tag:hover h4 { border-color: $method ; }
+
+.tag h4 {
+  padding: 2px 7px;
+  border: 1px solid $lightgray;
+  display: inline;
+  white-space: nowrap;
+  margin-right: 4px;
+  text-align: left;
+  line-height: 2.5em;
+  font-weight: 400;
+}
+
+.sector p {
+  color: $sector;
+}
+.problem p {
+  color: $problem;
+}
+.method p {
+  color: $method;
+}
