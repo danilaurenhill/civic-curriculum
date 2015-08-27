@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   $("article .more-info").hide();
   var height = $(".more-info .description").height();
   $(".more-info .image-box").height(height + 30);
