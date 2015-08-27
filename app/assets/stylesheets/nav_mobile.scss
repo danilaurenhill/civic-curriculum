@@ -1,0 +1,27 @@
+header { 
+  background-color: black; 
+  border-bottom: 1px solid #3D3D3D;
+}
+nav {
+  @include clearfix();
+  @include outer-container;
+  .logo img {
+    width: 140px;
+    float: right;
+  }
+  .title {
+    float: left;
+    padding-top: 10px;
+    h1 {
+      font-weight: 700;
+      color: white;
+      display: inline;
+    }
+    p {
+      font-weight: 100;
+      margin-left: 10px;
+      color: white;
+      display: inline;
+    }
+  }
+}
