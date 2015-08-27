@@ -92,17 +92,38 @@ $( document ).ready(function() {
     newHtml= "";
     newHtml += "<h4 class='notice'>We found "+ newJson.length +" results</h4>"
     for(i = 0; i < newJson.length; i++){
-      newHtml += "<article>"
+      newHtml += "<article>";
+      newHtml += "<div class='article-synopsis'>";
+      newHtml += "<div class='article-image'>";
+      newHtml += "<img src='"+ newJson[i].picture +"'>";
+      newHtml += "</div>";
+      newHtml += "<div class='image-box'></div>";
+      newHtml += "<div class='article-text'>";
       newHtml += "<h3>"+ newJson[i].name +"</h3>";
-      newHtml += "<p>"+ newJson[i].description +"</p>"
-      newHtml += "<a href='#'></a>"
-      newHtml += "<div class='tags'>"
+      newHtml += "<p class='preview'>"+ newJson[i].preview +"</p>";
+      newHtml += "</div>";
+      newHtml += "<div class='more-info'>";
+      newHtml += "<div class='share-links'>";
       for(z = 0; z < newJson[i].tags.length; z++){
-        newHtml += " <a href='#' data-tag='"+ newJson[i].tags[z] +"' class='tag'><h4>"+ newJson[i].tags[z].charAt(0).toUpperCase() + newJson[i].tags[z].slice(1) +"</h4></a>";
+        newHtml += "<a class='tag'><h4>"+newJson[i].tags[z].charAt(0).toUpperCase() + newJson[i].tags[z].slice(1)+"</h4></a>";
       }
-      newHtml += "</div>"
-      newHtml += "<a href='#' class='expand'><h4>More</h4></a> "
-      newHtml += "  </article>"
+      newHtml += "</div>";
+      newHtml += "<p class='description'>"+ newJson[i].description +"</p>";
+      newHtml += "</div>";
+      newHtml += "<div class='meta-data'>";
+      newHtml += "<div class='article-link'>";
+      newHtml += "<a href="+ newJson[i].link +">link</a>";
+      newHtml += "</div>";
+      newHtml += "<div class='text-tags'>";
+      newHtml += "<div class='tags'>";
+       for(z = 0; z < newJson[i].tags.length; z++){
+        newHtml += "<a class='tag'><h4>"+newJson[i].tags[z].charAt(0).toUpperCase() + newJson[i].tags[z].slice(1)+"</h4></a>";
+      }
+      newHtml += "</div>";
+      newHtml += "<a href='#' class='expand more'><h4>More</h4></a>";
+      newHtml += "</div>";
+      newHtml += "</div>";
+      newHtml += "</article>";
     }
     $(".cases").html(newHtml);
   });
