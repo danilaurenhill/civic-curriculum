@@ -79,41 +79,44 @@ $( document ).ready(function() {
     var tag = $(this).val();
     if(tag != ""){
       selectedTags.school = tag;
-      // newSchoolJson = [];
-      // for(z = 0; z < json.length; z++){
-      //   if(($.inArray( tag, json[z].tags ) > -1 ) && ($.inArray(json[z], newSchoolJson) < 0 )){
-      //     newSchoolJson.push(json[z]);
-      //   }
-      // };
-      // loadJson(newSchoolJson);
+      createFilterJson(); 
+      loadJson(newJson);  
     }
   });
-
 
     
   $( ".main-questions label select#subject").change(function() {
     var tag = $(this).val();
     if (tag != "") {
       selectedTags.subject = tag;
-      newSubjectJson = [];
-      for(z = 0; z < json.length; z++){
-        if(($.inArray( tag, json[z].tags ) > -1 ) && ($.inArray(json[z], newSubjectJson) < 0 )){
-          newSubjectJson.push(json[z]);
-        }
-      };
-
-      loadJson(newSubjectJson);  
-    };
+      createFilterJson(); 
+      loadJson(newJson);
+      }; 
   });
 
   var createFilterJson = function(){
     newJson = [];
     for(i = -1; i < selectedTags.tag_list.length; i++){
       for(z = 0; z < json.length; z++){
-        if(($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 && ($.inArray(selectedTags.school, json[z].tags)) > -1)){
-          newJson.push(json[z]);
-        } else if ((selectedTags.tag_list.length === 0) && ($.inArray(selectedTags.school, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
-          newJson.push(json[z]);
+        debugger;
+        if (selectedTags.subject != "" && selectedTags.school != "") {
+          if ((selectedTags.tag_list.length === 0) && ($.inArray(json[z], newJson) < 0) &&  ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(selectedTags.school, json[z].tags) > -1)){
+            newJson.push(json[z]);
+          } else if(($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0) &&  ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(selectedTags.school, json[z].tags) > -1)){
+            newJson.push(json[z]);
+          }
+        } else if (selectedTags.school != ""){
+          if ((selectedTags.tag_list.length === 0) && ($.inArray(selectedTags.school, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
+            newJson.push(json[z]);
+          } else if (($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(selectedTags.school, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
+            newJson.push(json[z]);
+          } 
+        } else if (selectedTags.subject){
+          if ((selectedTags.tag_list.length === 0) && ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
+            newJson.push(json[z]);
+          } else if (($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
+            newJson.push(json[z]);
+          }
         } else {
           newJson.slice(json[z], 1);
         };
