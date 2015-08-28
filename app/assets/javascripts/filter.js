@@ -69,56 +69,57 @@ $( document ).ready(function() {
   }
   ];
 
+  var selectedTags = {
+    subject: "",
+    school: "",
+    tag_list: []
+  };
+
   $( ".main-questions label select#school").change(function() {
     var tag = $(this).val();
     if(tag != ""){
-      var schoolArray = ["high-school", "undergraduate-school", "graduate-school"];
-      for (var i = 0; i < schoolArray.length; i++) {
-          var found = $.inArray(schoolArray[i], tags);
-          if (found >= 0) {
-            tags.splice(found, 1);
-          };
-      };
-      tags.push(tag);
-
-      newJson = [];
-      for(i = 0; i < tags.length; i++){
-        for(z = 0; z < json.length; z++){
-          if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
-            newJson.push(json[z]);
-          }
-        }
-      };
-      loadJson(newJson);
+      selectedTags.school = tag;
+      // newSchoolJson = [];
+      // for(z = 0; z < json.length; z++){
+      //   if(($.inArray( tag, json[z].tags ) > -1 ) && ($.inArray(json[z], newSchoolJson) < 0 )){
+      //     newSchoolJson.push(json[z]);
+      //   }
+      // };
+      // loadJson(newSchoolJson);
     }
   });
+
+
     
   $( ".main-questions label select#subject").change(function() {
     var tag = $(this).val();
     if (tag != "") {
-      var schoolArray = ["economics", "statistics", "environmental", "politics", "history"];
-      for (var i = 0; i < schoolArray.length; i++) {
-          var found = $.inArray(schoolArray[i], tags);
-          if (found >= 0) {
-            tags.splice(found, 1);
-          };
-      };
-      tags.push(tag);
-
-      newJson = [];
-      for(i = 0; i < tags.length; i++){
-        for(z = 0; z < json.length; z++){
-          if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
-            newJson.push(json[z]);
-          }
+      selectedTags.subject = tag;
+      newSubjectJson = [];
+      for(z = 0; z < json.length; z++){
+        if(($.inArray( tag, json[z].tags ) > -1 ) && ($.inArray(json[z], newSubjectJson) < 0 )){
+          newSubjectJson.push(json[z]);
         }
       };
 
-      loadJson(newJson);  
+      loadJson(newSubjectJson);  
     };
   });
 
-
+  var createFilterJson = function(){
+    newJson = [];
+    for(i = -1; i < selectedTags.tag_list.length; i++){
+      for(z = 0; z < json.length; z++){
+        if(($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 && ($.inArray(selectedTags.school, json[z].tags)) > -1)){
+          newJson.push(json[z]);
+        } else if ((selectedTags.tag_list.length === 0) && ($.inArray(selectedTags.school, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
+          newJson.push(json[z]);
+        } else {
+          newJson.slice(json[z], 1);
+        };
+      }
+    };
+  }
 
   var loadJson = function(newJson){
     newHtml= "";
@@ -182,31 +183,23 @@ $( document ).ready(function() {
   loadJson(json);
   $(".aside-toggle").on("click", function(){
     loadJson(json);
-  var dataTags=$("aside .tag");
-  for(i = 0; i < dataTags.length; i++){
-    $(dataTags[i]).find("h4").css({"background-color":"white"});
-  };
+    var dataTags=$("aside .tag");
+    for(i = 0; i < dataTags.length; i++){
+      $(dataTags[i]).find("h4").css({"background-color":"white"});
+    };
   });
 
   $(document).on("click", "a.tag", function(){
     var clicked = $(this).data("tag");
-    var found = $.inArray(clicked, tags);
+    var found = $.inArray(clicked, selectedTags.tag_list);
     if (found >= 0) {
-      tags.splice(found, 1);
+      selectedTags.tag_list.splice(found, 1);
       $(this).find("h4").css({"background-color":"white"});
     } else if( found < 0 ) {
       $(this).find("h4").css({"background-color":"#EEE"});
-      tags.push(clicked);
+      selectedTags.tag_list.push(clicked);
     }
-    var tagOptions = $("aside .tag")
-    newJson = [];
-    for(i = 0; i < tags.length; i++){
-      for(z = 0; z < json.length; z++){
-        if(($.inArray( tags[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0 )){
-          newJson.push(json[z]);
-        }
-      }
-    };
-    loadJson(newJson);
-});
+    createFilterJson();
+    loadJson(newJson); 
+  });
 });
