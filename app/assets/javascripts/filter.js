@@ -5,7 +5,7 @@ $( document ).ready(function() {
   var json = [
     {
     name: "Blue Button Initiative",
-    preview: "An initiative which increases Americans' access to their own health information electronically, in a format they can use and re-use.", 
+    preview: "An initiative which increases Americans' access to their own health information electronically, in a format they can use and re-use.",
     description: "Increase the transparency and access to their health information, in order to make more informed decisions about their health, care for their family members, and share information with their providers. A team of PIFs, in partnership with the Office of the National Coordinator for Health Information Technology (ONC), VA, DoD, & CMS to expand the Blue Button Initiatives including connector, Fast Healthcare Interoperability Resources (FHIR) API standards for interoperability and a FHIR test server in SITE and CMS. 150 million Americans have access to their personalized health data; 600+ commitments from organizations to advance health information access efforts.",
     tags: ["social-justice", "health", "undergraduate-school", "environmental"],
     picture: "/assets/blue-button.png",
@@ -69,59 +69,91 @@ $( document ).ready(function() {
   }
   ];
 
-  var selectedTags = {
-    subject: "",
-    school: "",
-    tag_list: []
-  };
+  var selectedTags =  [];
+  var required_tags = [];
 
   $( ".main-questions label select#school").change(function() {
     var tag = $(this).val();
     if(tag != ""){
-      selectedTags.school = tag;
-      createFilterJson(); 
-      loadJson(newJson);  
+      required_tags.push(tag);
+      createFilterJson();
+      loadJson(newJson);
     }
   });
 
-    
+
   $( ".main-questions label select#subject").change(function() {
     var tag = $(this).val();
     if (tag != "") {
-      selectedTags.subject = tag;
-      createFilterJson(); 
+      required_tags.push(tag);
+      createFilterJson();
       loadJson(newJson);
-      }; 
+      };
   });
 
   var createFilterJson = function(){
-    newJson = [];
-    for(i = -1; i < selectedTags.tag_list.length; i++){
-      for(z = 0; z < json.length; z++){
-        debugger;
-        if (selectedTags.subject != "" && selectedTags.school != "") {
-          if ((selectedTags.tag_list.length === 0) && ($.inArray(json[z], newJson) < 0) &&  ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(selectedTags.school, json[z].tags) > -1)){
-            newJson.push(json[z]);
-          } else if(($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0) &&  ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(selectedTags.school, json[z].tags) > -1)){
-            newJson.push(json[z]);
-          }
-        } else if (selectedTags.school != ""){
-          if ((selectedTags.tag_list.length === 0) && ($.inArray(selectedTags.school, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
-            newJson.push(json[z]);
-          } else if (($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(selectedTags.school, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
-            newJson.push(json[z]);
-          } 
-        } else if (selectedTags.subject){
-          if ((selectedTags.tag_list.length === 0) && ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
-            newJson.push(json[z]);
-          } else if (($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
-            newJson.push(json[z]);
-          }
-        } else {
-          newJson.slice(json[z], 1);
-        };
-      }
-    };
+    requiredJson = [];
+    if (required_tags.length > 0) {
+      $.each(required_tags, function(t,tag){
+        $.each(json, function(s,study){
+          debugger;
+          if ($.inArray(tag, study.tags) > -1 && ($.inArray(json[s], requiredJson) < 0)) {
+            requiredJson.push(study);
+          } else if (($.inArray(tag, study.tags) < 0) && ($.inArray(json[s], requiredJson) > -1)){
+            var found = $.inArray(json[s], requiredJson);
+            requiredJson.splice(found, 1);
+          };
+          debugger;
+        });
+      });
+    } else {
+      requiredJson = json;
+    }
+
+    newJson = []
+    if (selectedTags.length > 0) {
+      $.each(selectedTags, function(t,tag){
+        $.each(requiredJson, function(s,study){
+          debugger;
+          if ($.inArray(tag, study.tags) > -1 && ($.inArray(newJson[s], requiredJson) < 0)) {
+            newJson.push(study);
+          };
+        });
+      });
+    }
+
+    if (newJson > 0){
+      newJson = newJson
+    }else {
+      newJson = requiredJson
+    }
+    console.log(newJson);
+    // for(i = -1; i < selectedTags.tag_list.length; i++){
+    //   for(z = 0; z < json.length; z++){
+    //     debugger;
+    //     if (selectedTags.subject != "" && selectedTags.school != "") {
+    //       if ((selectedTags.tag_list.length === 0) && ($.inArray(json[z], newJson) < 0) &&  ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(selectedTags.school, json[z].tags) > -1)){
+    //         newJson.push(json[z]);
+    //       } else if(($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0) &&  ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(selectedTags.school, json[z].tags) > -1)){
+    //         newJson.push(json[z]);
+    //       }
+    //     } else if (selectedTags.school != ""){
+    //       if ((selectedTags.tag_list.length === 0) && ($.inArray(selectedTags.school, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
+    //         newJson.push(json[z]);
+    //       } else if (($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(selectedTags.school, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
+    //         newJson.push(json[z]);
+    //       }
+    //     } else if (selectedTags.subject){
+    //       if ((selectedTags.tag_list.length === 0) && ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
+    //         newJson.push(json[z]);
+    //       } else if (($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
+    //         newJson.push(json[z]);
+    //       }
+    //     } else {
+    //       newJson.slice(json[z], 1);
+    //     };
+    //   }
+    // };
   }
 
   var loadJson = function(newJson){
@@ -194,15 +226,15 @@ $( document ).ready(function() {
 
   $(document).on("click", "a.tag", function(){
     var clicked = $(this).data("tag");
-    var found = $.inArray(clicked, selectedTags.tag_list);
+    var found = $.inArray(clicked, selectedTags);
     if (found >= 0) {
-      selectedTags.tag_list.splice(found, 1);
+      selectedTags.splice(found, 1);
       $(this).find("h4").css({"background-color":"white"});
     } else if( found < 0 ) {
       $(this).find("h4").css({"background-color":"#EEE"});
-      selectedTags.tag_list.push(clicked);
+      selectedTags.push(clicked);
     }
     createFilterJson();
-    loadJson(newJson); 
+    loadJson(newJson);
   });
 });
