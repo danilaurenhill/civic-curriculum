@@ -71,10 +71,9 @@ $( document ).ready(function() {
 
   var selectedTags =  [];
   var required_tags = [];
-
-  $( ".main-questions select").change(function() {
-    required_tags = [];
+  var filterByDropdown = function(){
     var selectTags = $("select");
+    required_tags = [];
     $.each(selectTags, function(t, tag){
       tagVal = $(tag).val();
       if (tagVal != ""){
@@ -83,6 +82,10 @@ $( document ).ready(function() {
     })
     createFilterJson();
     loadJson(newJson);
+  };
+
+  $( ".main-questions select").change(function() {
+    filterByDropdown();
   });
 
   function containsAll(needles, haystack){
@@ -188,7 +191,8 @@ $( document ).ready(function() {
 
   loadJson(json);
   $(".aside-toggle").on("click", function(){
-    loadJson(json);
+    selectedTags = [];
+    filterByDropdown();
     var dataTags=$("aside .tag");
     for(i = 0; i < dataTags.length; i++){
       $(dataTags[i]).find("h4").css({"background-color":"white"});
