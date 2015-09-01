@@ -103,7 +103,7 @@ $( document ).ready(function() {
     }
 
     newJson = []
-    if (requiredJson.length > 0){
+    if (required_tags.length > 0){
       requiredJson = requiredJson;
     } else {
       requiredJson = json;
