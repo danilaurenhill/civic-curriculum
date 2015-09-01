@@ -1,4 +1,4 @@
-aside {
+aside, .aside-anchor {
   h4 a {
     color: gray;
     text-decoration: none;
@@ -21,10 +21,12 @@ aside {
     p {
       display: block;
     }
-  /*  input[type="radio"] {
-      display: inline;
-      text-align: left;
-      margin-left: 18px;
-    }*/
   }
 }
+.aside-anchor {
+  display: none;
+}
+.aside-anchor.sticky {
+  display: block;
+}
+
