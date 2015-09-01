@@ -85,16 +85,6 @@ $( document ).ready(function() {
     loadJson(newJson);
   });
 
-
-//   $( ".main-questions label select#subject").change(function() {
-//     var tag = $(this).val();
-//     if (tag != "") {
-//       required_tags.push(tag);
-//       createFilterJson();
-//       loadJson(newJson);
-//     };
-//   });
-
   function containsAll(needles, haystack){
     for(var i = 0 , len = needles.length; i < len; i++){
       if($.inArray(needles[i], haystack) == -1) return false;
@@ -105,77 +95,33 @@ $( document ).ready(function() {
   var createFilterJson = function(){
     requiredJson = [];
     if (required_tags.length > 0) {
-      // filter through the first tag, then filter through that fitlered array
-      // filter through if tag matches all in required_tags array
       $.each(json, function(s, study){
-        debugger;
         if (containsAll(required_tags, study.tags)){
           requiredJson.push(study);
         };
-        debugger;
       });
     }
-
-      // $.each(required_tags, function(t,tag){
-      //   $.each(json, function(s,study){
-      //     debugger;
-      //     if ($.inArray(tag, study.tags) > -1 && ($.inArray(json[s], requiredJson) < 0)) {
-      //       requiredJson.push(study);
-      //     } else if (($.inArray(tag, study.tags) < 0) && ($.inArray(json[s], requiredJson) > -1)){
-      //       var found = $.inArray(json[s], requiredJson);
-      //       requiredJson.splice(found, 1);
-      //     };
-      //     debugger;
-      //   });
-      // });
-    // } else {
-      // requiredJson = json;
-    // }
 
     newJson = []
     if (selectedTags.length > 0) {
       $.each(selectedTags, function(t,tag){
         $.each(requiredJson, function(s,study){
           debugger;
-          if ($.inArray(tag, study.tags) > -1 && ($.inArray(newJson[s], requiredJson) < 0)) {
+          if ($.inArray(tag, study.tags) > -1 && ($.inArray(study, newJson) < 0)) {
             newJson.push(study);
           };
+          debugger
         });
       });
     }
 
-    if (newJson > 0){
+    debugger;
+    if (newJson.length > 0){
       newJson = newJson
-    }else {
+    } else {
       newJson = requiredJson
     }
     console.log(newJson);
-    // for(i = -1; i < selectedTags.tag_list.length; i++){
-    //   for(z = 0; z < json.length; z++){
-    //     debugger;
-    //     if (selectedTags.subject != "" && selectedTags.school != "") {
-    //       if ((selectedTags.tag_list.length === 0) && ($.inArray(json[z], newJson) < 0) &&  ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(selectedTags.school, json[z].tags) > -1)){
-    //         newJson.push(json[z]);
-    //       } else if(($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(json[z], newJson) < 0) &&  ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(selectedTags.school, json[z].tags) > -1)){
-    //         newJson.push(json[z]);
-    //       }
-    //     } else if (selectedTags.school != ""){
-    //       if ((selectedTags.tag_list.length === 0) && ($.inArray(selectedTags.school, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
-    //         newJson.push(json[z]);
-    //       } else if (($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(selectedTags.school, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
-    //         newJson.push(json[z]);
-    //       }
-    //     } else if (selectedTags.subject){
-    //       if ((selectedTags.tag_list.length === 0) && ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
-    //         newJson.push(json[z]);
-    //       } else if (($.inArray( selectedTags.tag_list[i], json[z].tags ) > -1 ) && ($.inArray(selectedTags.subject, json[z].tags) > -1) && ($.inArray(json[z], newJson) < 0 )) {
-    //         newJson.push(json[z]);
-    //       }
-    //     } else {
-    //       newJson.slice(json[z], 1);
-    //     };
-    //   }
-    // };
   }
 
   var loadJson = function(newJson){
