@@ -1,9 +1,8 @@
-aside, .aside-anchor {
+aside {
   h4 a {
     color: gray;
     text-decoration: none;
   }
-  @include span-columns(3);
   background-color: white;
   border: 1px solid $lightgray;
   position: relative;
@@ -16,17 +15,19 @@ aside, .aside-anchor {
   .tag-category {
     margin-bottom: 20px;
     h4 {
-        text-align: left;
+      text-align: left;
     }
     p {
       display: block;
     }
   }
-}
-.aside-anchor {
-  display: none;
-}
-.aside-anchor.sticky {
-  display: block;
+  width: 100%;
 }
 
+.aside-anchor {
+  @include clearfix;
+  @include span-columns(3);
+  padding-left: 0px;
+  position: relative;
+  > p {color: transparent;}
+}
