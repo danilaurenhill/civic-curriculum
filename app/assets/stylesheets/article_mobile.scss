@@ -3,7 +3,7 @@ section {
   h4.notice {
     margin-top: 0;
     font-style: italic;
-  }
+}
 }
 article {
   @include clearfix;
@@ -11,10 +11,55 @@ article {
   background-color: white;
   padding: 25px;
   margin-bottom: 30px;
-  h3 { 
-    margin-top: 0px; 
+  height: 200px;
+  position: relative;
+  h3 {
+    margin-top: 0px;
+}
+.article-image {
+  img {
+    position: absolute;
+    height: 200px;
+    top: 0;
+    left: 0;
+}
+}
+.image-box {
+  float: left;
+  width: 200px;
+  height: 130px;
+}
+}
+
+.meta-data {
+  @include clearfix;
+  .share-links {
+    width: 200px;
+    float: left;
+    i {
+      color: gray;
+    }
   }
 }
+
+a.article-link {
+  background: $msr-blue;
+  padding: 2px 15px;
+  color: white;
+  text-decoration: none;
+  font-size: modular-scale(-1);
+  float: right;
+  }
+
+.article-text {
+  height: 130px;
+}
+
+.more-info {
+  @include clearfix;
+  padding-bottom: 30px;
+}
+
 
 .tags {
   float: left;
@@ -32,15 +77,20 @@ article {
   color: $msr-blue;
   text-align: center;
 
+  &.more h4:after {
+    content: '▼';
+  }
+  &.collapse h4:after {
+    content: '▲';
+  }
+
   h4 { 
     margin: 0px; 
     font-weight: 400;
     &:after { 
-      content: '▼';
       position: absolute;
       color: $msr-blue;
       padding-left: 5px;
-    }
-
-  }
+}
+}
 }
