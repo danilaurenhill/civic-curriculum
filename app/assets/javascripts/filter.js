@@ -82,6 +82,7 @@ $( document ).ready(function() {
     })
     createFilterJson();
     loadJson(newJson);
+    leftAlignArticle();
   };
 
   $( ".main-questions select").change(function() {
@@ -169,7 +170,9 @@ $( document ).ready(function() {
     return false;
   };
 
-  loadJson(json);
+  // loadJson(json);
+  leftAlignArticle();
+
   $(".aside-toggle").on("click", function(){
     selectedTags = [];
     filterByDropdown();
@@ -192,5 +195,6 @@ $( document ).ready(function() {
     }
     createFilterJson();
     loadJson(newJson);
+    leftAlignArticle();
   });
 });
