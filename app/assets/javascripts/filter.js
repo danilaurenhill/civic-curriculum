@@ -169,7 +169,7 @@ $( document ).ready(function() {
     return false;
   };
 
-  // loadJson(json);
+  loadJson(json);
   $(".aside-toggle").on("click", function(){
     selectedTags = [];
     filterByDropdown();
