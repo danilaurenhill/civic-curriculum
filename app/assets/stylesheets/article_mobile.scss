@@ -33,6 +33,7 @@ article {
 
 .meta-data {
   @include clearfix;
+  padding-top: 10px;
   .share-links {
     width: 200px;
     float: left;
