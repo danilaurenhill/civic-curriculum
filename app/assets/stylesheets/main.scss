@@ -4,7 +4,7 @@
 header {
 	.title {
   		@include span-columns(12);
-		h1 { 
+		h1 {
 			text-align: center;
 			color: green;
 		}
