@@ -6,7 +6,7 @@ $( document ).ready(function() {
   {
     name: "GeoBrowser Deployment in the USDA Forest Service",
     preview: "Web mapping technology has revolutionized the way we distribute and interact with geospatial information. With minimal software and a PC, users can now dynamically interact with map displays and discover relationships in map data that previously required expensive software and expertise. Land management agencies produce many geospatial datasets in the course of their activities and research. Web-based GeoBrowsers are an effective way to expose these datasets. In this paper we describe our efforts to meet a mission goal of the USDA Forest Service Western Wildland Environmental Threat Center (WWETAC) by creating a system where users can explore multiple threats (insects and disease, fire hazard, etc) in a dynamic map display. Users can access this system from the WWETAC web site which is here: www.fs.fed.us\wwetac.",
-    tags: ["transit", "disaster-response", "open-data", "networks", "graduate-school"],
+    tags: ["transit", "disaster-response", "open-data", "graduate-school"],
     picture: "/assets/geo_com.jpg",
     link: "http://www.fs.fed.us/wwetac/projects/PDFs/GeoCom_2010_WETAG_FINAL2.pdf"
   },
